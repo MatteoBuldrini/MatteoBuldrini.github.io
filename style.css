@@ -1,0 +1,1139 @@
+/*General*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+	color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: .05rem;
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+.section-title span {
+	color: crimson;
+}
+
+/*Portfolio and Resume button style*/
+.cta{
+    display: inline-block;
+    padding: 10px 35px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid crimson;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+.cta:hover{
+    color: white;
+    background-color: crimson;
+}
+
+/*Style of the name at the top and bottom*/
+.brand h1{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+}
+.brand h1 span{
+    color: crimson;
+}
+
+/*End General*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Header Section*/
+#header{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+
+#header .header{
+    min-height: 8vh;
+    /*Background color of header*/
+    background-color: #0d1013;
+    transition: .3s ease background-color;
+}
+
+#header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+
+/*Style of the navigation list - hamburger*/
+#header .nav-list ul{
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: .5s ease left;
+}
+/*Effects when clicking, shows/hides menu*/
+#header .nav-list ul.active{
+    left: 0;
+}
+
+/*Style of the items in the nav list*/
+#header .nav-list ul a{
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+
+/*To create the effect of the text behind*/
+#header .nav-list ul a::after{
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240,248,255,0.021);
+    font-size: 13rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .3s ease letter-spacing;
+}
+/* Create the effect while hover*/
+#header .nav-list ul li:hover a::after{
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+
+/*Color to crimson while hover*/
+#header .nav-list ul li:hover a{
+    color: crimson;
+}
+
+#header .hamburger{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(.8);
+    margin-right: 20px;
+}
+
+/*Pulse effect*/
+#header .hamburger:after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: hamburger_puls 1s ease infinite;
+}
+
+#header .hamburger .bar{
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: .3s ease;
+    transition-property: top, bottom;
+}
+
+/*Effects of the single/three lines while clicking on the hamburger*/
+#header .hamburger .bar::after{
+    top: 8px;
+}
+#header .hamburger .bar::before{
+    bottom: 8px;
+}
+#header .hamburger.active .bar::before{
+    bottom: 0;
+}
+#header .hamburger.active .bar::after{
+    top: 0;
+}
+
+/*End Header Section*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Home Section*/
+#home{
+    /*Background image*/
+    background-image:url("images/home_data analytics3.jpg");
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+/*The overall effect on the background that now is black*/
+#home::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    /*Change background color*/
+    background-color: #0d1013;
+    opacity: .7;
+    z-index: -1;
+}
+
+#home .home{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+/*Style in the home section (Welcome...)*/
+#home h1{
+    display: block;
+    width: fit-content;
+    font-size: 4.0rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+/*Delay appearance of each line*/
+#home h1:nth-child(1){
+    animation-delay: 1s;
+}
+#home h1:nth-child(2){
+    animation-delay: 2.5s;
+}
+#home h1:nth-child(3){
+    animation-delay: 3.5s;
+}
+
+/*Animation of the top text (Welcome...)*/
+#home h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: crimson;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .3s;
+}
+/*Delay animation of each line*/
+#home h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#home h1:nth-child(2) span{
+    animation-delay: 2s;
+}
+#home h1:nth-child(3) span{
+    animation-delay: 3.0s;
+}
+
+/*LinkedIn button style*/
+#home .cta2{
+    display: inline-block;
+    padding: 10px 40px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid blue;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    margin-left: 5px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+#home .cta2:hover{
+    color: white;
+    background-color: blue;
+}
+/*End home section*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*About section*/
+#about .about{
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+/*Reduce the white space between home and about sections*/
+/*
+#about .container{
+    min-height: 10vh;
+}
+*/
+
+/*Style of the image*/
+#about .col-left{
+    width: 250px;
+    height: 290px;
+}
+#about .col-left .about-img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border: 10px solid white;
+}
+/*Create the red border*/
+#about .col-left .about-img::after{
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 19px;
+    height: 98%;
+    width: 98%;
+    border: 7px solid crimson;
+    z-index: -1;
+}
+
+/*Style of the text*/
+#about .col-right{
+    width: 100%;
+}
+#about .col-right h2{
+    font-size: 1.8rem;
+    font-weight: 550;
+    letter-spacing: 0.1rem;
+    margin-bottom: 10px;
+}
+#about .col-right p{
+    margin-bottom: 20px;
+    text-align: justify;
+}
+#about .col-right .cta{
+    color: black;
+    margin-bottom: 40px;
+    padding: 10px 20px;
+    font-size: 2rem;
+}
+/*End about section*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Contacts section*/
+
+#contact .container{
+    min-height: 70vh;
+}
+
+
+#contact .contact{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#contact .section-title {
+    font-size: 3.6rem;
+    letter-spacing: normal;
+    margin-bottom: 0px;
+}
+
+#contact .contact-items{
+    width: 350px;
+}
+
+#contact .contact-item{
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 18px 0 #0000005d;
+    transition: .3s ease box-shadow;
+}
+/*Hover effect of the box*/
+#contact .contact-item:hover{
+    box-shadow: 0px 0px 5px 0 #0000005d;
+}
+
+/*Icon image*/
+#contact .icon{
+    width: 50px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#contact .contact-info h1{
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+#contact .contact-info h2{
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-weight: 500;
+}
+
+/*End contacts section*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Footer section*/
+
+#footer{
+    /*Blue version: linear-gradient(60deg, #051e3b 0%, #185697 100%) */
+    /*Grey version: linear-gradient(60deg, #29323c 0%, #32363a 100%) */
+    /*Black version: linear-gradient(60deg, #0d1013 30%, #171d22 100%) */
+    background-image: linear-gradient(60deg, #0d1013 30%, #171d22 100%);
+}
+
+#footer .footer{
+    min-height: 50px;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#footer h1{
+    color: white;
+    font-weight: 700;
+    font-size: 1.7rem;
+    letter-spacing: .2rem;
+    padding-top: 10px;
+}
+
+#footer h2{
+    color: white;
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: .1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/*Style Social icons*/
+#footer .social-icon{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#footer .social-item{
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+}
+
+/*Effect of the icons*/
+#footer .social-item img{
+    filter: grayscale(1);
+    transition: .3s ease filter;
+}
+#footer .social-item:hover img{
+    filter: grayscale(0);
+}
+
+#footer p{
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/*End footer section*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Projects section*/
+
+#projects .projects{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+    padding-top: 80px;
+}
+
+#projects .projects-header h1{
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: normal;
+}
+
+#projects .projects-header h2{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: normal;
+}
+
+#projects .all-projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#projects .project-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/*Style of text above project images*/
+#projects .project-info{
+    padding: 30px;
+    flex-basis: 50%;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(60deg, #093363 0%, #2776ca 100%);
+    color: white;
+}
+#projects .project-info h1{
+    font-size: 4rem;
+    font-weight: 500;
+}
+#projects .project-info h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+#projects .project-info p{
+    color: white;
+    text-align: justify;
+}
+
+#projects .project-img{
+	flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+    position: relative;
+    border: 0.1px solid lightslategrey;
+    
+}
+
+/*In case I want to color the images of projects*/
+#projects .project-img:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    /*
+    background-image: linear-gradient(60deg, #093363 0%, #2776ca 100%);*/
+    opacity: .7;
+}
+
+/*Create the effects of zoom when hovering the image*/
+#projects .project-img img{
+    transition: .3s ease transform;
+}
+#projects .project-item:hover .project-img img{
+    transform: scale(1.1);
+}
+
+/*Effects of the button "View entire portfolio - now deleted*/
+#projects .project-others .cta{
+    color: black;
+    padding: 10px 20px;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/*End projects section*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Certifications section*/
+
+#certifications .certifications{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+    padding-top: 80px;
+}
+
+#certifications .certifications-header h1{
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: normal;
+}
+
+#certifications .certifications-header h2{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: normal;
+}
+
+#certifications .all-certifications{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#certifications .certification-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 0.1px solid lightslategrey;
+}
+
+/*Style of text above certification images*/
+#certifications .certification-info{
+    padding: 20px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    /*Blue: background-image: linear-gradient(60deg, #093363 0%, #2776ca 100%); */
+    /*background-color: #5c5c5c;*/ /* Grey #59595c #5c5c5c */
+    background-image: linear-gradient(60deg, #5c5c5c 50%, #6d6c6c 100%);
+    color: white;
+}
+
+/* Does not work
+#certifications .certification-info:nth-child(even){
+    background-image: linear-gradient(60deg, #093363 0%, #2776ca 100%);
+}
+*/
+
+#certifications .certification-info h1{
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/*Effect on certificate name when hover*/
+#certifications .certification-info h1:hover{
+    color: black;
+    transition: .3s ease-in-out;
+}
+
+/* Removed
+#certifications .certification-info h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+*/
+
+#certifications .certification-info p{
+    margin-top: 18px;
+    font-size: 1.4rem;
+    /*font-style: italic;*/
+    color: white;
+    text-align: center;
+}
+
+#certifications .certification-img{
+	flex-basis: 50%; /*50%*/
+	height: 250px; /*250px*/
+	overflow: hidden;
+    position: relative;
+}
+
+
+/*In case I want to color the images of projects*/
+#certifications .certification-img:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #bec2c5;
+    opacity: .7;
+    /*Put it behind so the link works*/
+    z-index: -1;
+}
+
+/*Zoom in effect when hovering the image*/
+
+#certifications .certification-img img{
+    transition: .3s ease transform;
+}
+#certifications .certification-item:hover .certification-img img{
+    transform: scale(1.1);
+}
+
+
+
+/*Shine effect when hovering the image*/
+/*
+#certifications .certification-img{
+    position: relative;
+}
+#certifications .certification-img::before{
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+#certifications .certification-img:hover::before{
+	-webkit-animation: shine .75s;
+	animation: shine 1.4s;
+}
+*/
+
+
+/*Blur effect when hovering the image*/
+/* Removed
+#certifications .certification-img{
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+#certifications .certification-img:hover{
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+*/
+
+
+/*Zoom out effect while hovering the image*/ /*
+#certifications .certification-img img{
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+#certifications .certification-item:hover .certification-img img{
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+*/
+
+/*End certifications section*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Website creation section*/
+
+#website_creation{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+    padding-top: 80px;
+}
+
+#website_creation .website_creation-header h1{
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 0px;
+    letter-spacing: normal;
+}
+
+#website_creation .website_creation-header h2{
+    padding: 20px;
+    text-align: justify;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    letter-spacing: normal;
+}
+
+#website_creation p{
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+/*Space between videos and adjust size*/ 
+.video-container{
+    padding-bottom: 50px;
+}
+
+.video-responsive{
+    padding: 5px;
+    width: 100%;
+    display: inline-block;
+    height: 56.25%;
+    margin: 0 -1px;
+}
+.aspect-ratio-16-9{
+    width: 100%;
+    padding-top: 56.25%; 
+    position: relative;
+}
+.video-responsive iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+/*End website creation section*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Keyframes*/
+
+/*Shine effect of images*/
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+/*Pulse effect of hamburger*/
+@keyframes hamburger_puls{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
+/*Used for animation of the text in home section (Welcome, my name is)*/
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+/*Used for animation of the text in home section (Welcome, my name is)*/
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+
+/*End Keyframes*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Media Query for Tablet - Websitecreation only*/
+@media only screen and (min-width:650px){
+    
+    /*Website creation Section*/
+    /*Align two videos in a line and add responsiveness*/
+    .video-responsive{
+        padding: 5px;
+        width: 50%;
+        display: inline-block;
+        height: 56.25%;
+        margin: 0 -1px;
+    }
+    .aspect-ratio-16-9{
+        width: 100%;
+        padding-top: 56.25%; 
+        position: relative;
+    }
+    .video-responsive iframe{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+    }
+    /*End website creation Section*/
+
+}
+
+/*Media Query for Tablet*/
+@media only screen and (min-width:900px){   /*768px */
+
+    /*General*/
+    h1.section-title{
+        font-size: 5rem;
+    }
+    /*End General*/
+
+    /*Home Section*/
+    #home h1{
+        font-size: 5rem;
+    }
+    /*End Home Section*/
+
+    /*About Section*/
+    #about .about{
+        flex-direction: row;
+    }
+    #about .col-left{
+        width: 450px;
+        height: 350px;
+        padding-left: 60px;
+    }
+    #about .about .col-left .about-img::after{
+        left: -45px;
+        top: 34px;
+        height: 98%;
+        width: 98%;
+        border: 10px solid crimson;
+    }
+    #about .col-right{
+        text-align: left;
+        padding: 30px;
+    }
+    #about .col-right h1{
+        text-align: left;
+    }
+
+    #about .col-right p{
+        font-weight: 500;
+        font-size: 1.4rem;
+    }
+
+    /*End About Section*/
+
+    /*Contacts Section*/
+    /*
+    #contact .contact{
+        flex-direction: column;
+        padding: 100px 0;
+        align-items: center;
+        justify-content: center;
+        min-height: 20vh;
+    }
+    #contact .contact-items{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+    #contact .contact-item{
+        width: 30%;
+        margin: 0;
+        flex-direction: row;
+    }
+    #contact .contact-item .icon{
+        height: 100px;
+        width: 100px;
+    }
+    #contact .contact-item .icon img{
+        object-fit: contain;
+    }
+    #contact .contact-item .contact-info{
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+    }
+    */
+    /*End Contacts Section*/
+
+
+    /*Projects Section*/
+    #projects .project-item{
+        flex-direction: row;
+    }
+    #projects .project-item:nth-child(even){
+        flex-direction: row-reverse;
+    }
+    #projects .project-item{
+        height: 300px;
+        margin: 0;
+        width: 97%;
+        border-radius: 0;
+        padding-bottom: 30px;
+    }
+    #projects .all-projects .project-info{
+        padding-top: 25px;
+        height: 100%;
+        /*Start the description at the top of the container*/
+        justify-content: flex-start;
+    }
+    #projects .all-projects .project-img{
+        height: 100%;
+    }
+    /*End Projects Section*/
+
+
+    /*Certifications Section*/
+
+    #certifications .all-certifications{
+        /*Certificates are shown in row not in column*/
+        flex-direction: row;
+        /*Stretch vertically the height to adapt it*/
+        align-items: stretch;
+    }
+
+    /*Space between certifications*/
+    #certifications .certification-item{
+        margin: 20px;
+    }
+
+    #certifications .certification-info{
+        /*Decrease the padding in desktop view*/
+        padding-top: 10px;
+        padding-bottom: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+        /*Start the description at the top of the container*/
+        justify-content: flex-start;
+    }
+
+    /*Increase a little bit the font*/
+    #certifications .certification-info h1{
+        font-size: 2.4rem;
+    }
+
+    /*Increase a little bit the font*/
+    #certifications .certification-info p{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /*End Certifications Section*/
+
+
+}
+/*End Media Query for Tablet*/
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Media Query for Desktop*/ 
+@media only screen and (min-width:1200px){
+
+    /*Header Section*/
+    #header .hamburger{
+        display: none;
+    }
+    #header .nav-list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+    /*Style of the text in desktop*/
+    #header .nav-list ul li a{
+        font-size: 1.5rem;
+        letter-spacing: 0.15rem;
+        padding: 10px 15px;
+    }
+    #header .nav-list ul a:after{
+        display: none;
+    }
+    /*End Header Section*/
+
+}
+/*End Media Query for Desktop*/
