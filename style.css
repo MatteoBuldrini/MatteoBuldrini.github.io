@@ -515,7 +515,6 @@ p {
     color: white;
     font-size: 0.9rem;
     font-weight: 500;
-    margin: 0 auto;
 }
 
 /*End footer section*/
@@ -540,10 +539,10 @@ p {
 }
 
 #projects .projects-header h2{
-    text-align: center;
+    text-align: justify;
     font-size: 2rem;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin: 20px;
     letter-spacing: normal;
 }
 
@@ -652,10 +651,10 @@ p {
 }
 
 #certifications .certifications-header h2{
-    text-align: center;
+    text-align: justify;
     font-size: 2rem;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin: 20px 30px;
     letter-spacing: normal;
 }
 
@@ -687,9 +686,10 @@ p {
     align-items: left;
     justify-content: center;
     flex-direction: column;
-    /*Blue: background-image: linear-gradient(60deg, #093363 0%, #2776ca 100%); */
     /*background-color: #5c5c5c;*/ /* Grey #59595c #5c5c5c */
-    background-image: linear-gradient(60deg, #5c5c5c 50%, #6d6c6c 100%);
+    /*Grey: background-image: linear-gradient(60deg, #5c5c5c 50%, #6d6c6c 100%); */
+    /*Grey (ligther): background-image: linear-gradient(60deg, #666565 0%, #707070 100%); */
+    background-image: linear-gradient(60deg, #666565 0%, #707070 100%);
     color: white;
 }
 
