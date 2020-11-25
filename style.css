@@ -611,6 +611,8 @@ p {
     /*
     background-image: linear-gradient(60deg, #093363 0%, #2776ca 100%);*/
     opacity: .7;
+    /*Put it behind so the link works*/
+    z-index: -1;
 }
 
 /*Create the effects of zoom when hovering the image*/
