@@ -885,6 +885,8 @@ p {
     margin: 0 auto;
     padding: 100px 0;
     padding-top: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 #single_project .single_project-header h1{
@@ -902,12 +904,17 @@ p {
     letter-spacing: normal;
 }
 
+#single_project .single_project-body p{
+    text-align: justify;
+
+}
+
 /*Style of Notebook button*/
 #single_project .cta{
     color: black;
     margin-bottom: 0px;
     padding: 10px 15px;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 /*End single_project section*/
@@ -1136,6 +1143,42 @@ p {
 
     /*End Certifications Section*/
 
+    /*-----------------------------------------------------------------------------------*/
+
+    /*Single_Project section*/
+
+    #single_project .single_project{
+        flex-direction: column;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 100px 0;
+        padding-top: 80px;
+    }
+
+    #single_project .single_project-header h1{
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 20px;
+        letter-spacing: normal;
+    }
+
+    #single_project .single_project-header h2{
+        text-align: justify;
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 20px;
+        letter-spacing: normal;
+    }
+
+    /*Style of Notebook button*/
+    #single_project .cta{
+        color: black;
+        margin-bottom: 0px;
+        padding: 10px 15px;
+        font-size: 2rem;
+    }
+
+    /*End single_project section*/
 
 }
 /*End Media Query for Tablet*/
