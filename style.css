@@ -460,7 +460,6 @@ p {
 /*Footer section*/
 
 #footer{
-    /*Blue version: linear-gradient(60deg, #051e3b 0%, #185697 100%) */
     /*Grey version: linear-gradient(60deg, #29323c 0%, #32363a 100%) */
     /*Black version: linear-gradient(60deg, #0d1013 30%, #171d22 100%) */
     background-image: linear-gradient(60deg, #0d1013 30%, #171d22 100%);
@@ -695,12 +694,6 @@ p {
     color: white;
 }
 
-/* Does not work
-#certifications .certification-info:nth-child(even){
-    background-image: linear-gradient(60deg, #093363 0%, #2776ca 100%);
-}
-*/
-
 #certifications .certification-info h1{
     font-size: 2.2rem;
     font-weight: 600;
@@ -880,6 +873,45 @@ p {
 }
 
 /*End website creation section*/
+
+
+/*-----------------------------------------------------------------------------------*/
+
+/*Single_Project section*/
+
+#single_project .single_project{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+    padding-top: 80px;
+}
+
+#single_project .single_project-header h1{
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: normal;
+}
+
+#single_project .single_project-header h2{
+    text-align: justify;
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 20px;
+    letter-spacing: normal;
+}
+
+/*Style of Notebook button*/
+#single_project .cta{
+    color: black;
+    margin-bottom: 0px;
+    padding: 10px 15px;
+    font-size: 2rem;
+}
+
+/*End single_project section*/
+
 
 /*-----------------------------------------------------------------------------------*/
 
