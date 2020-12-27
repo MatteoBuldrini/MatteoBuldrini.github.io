@@ -892,6 +892,7 @@ p {
 #single_project .single_project-header h1{
     text-align: center;
     font-weight: 500;
+    font-size: 3rem;
     margin-bottom: 20px;
     letter-spacing: normal;
 }
@@ -906,7 +907,17 @@ p {
 
 #single_project .single_project-body p{
     text-align: justify;
+    font-size: 1.5rem;
+    letter-spacing: normal;
+}
 
+#single_project .single_project-body ol{
+    text-align: justify;
+    font-size: 1.5rem;
+    letter-spacing: .05rem;
+    font-weight: 300;
+    padding-left: 20px;
+    letter-spacing: normal;
 }
 
 /*Style of Notebook button*/
@@ -1158,6 +1169,7 @@ p {
     #single_project .single_project-header h1{
         text-align: center;
         font-weight: 500;
+        font-size: 4rem;
         margin-bottom: 20px;
         letter-spacing: normal;
     }
