@@ -565,7 +565,7 @@ p {
 
 /*Style of text above project images*/
 #projects .project-info{
-    padding: 30px;
+    padding: 25px;
     flex-basis: 50%;
     background-color: white;
     height: 100%;
@@ -577,13 +577,14 @@ p {
     color: white;
 }
 #projects .project-info h1{
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 500;
 }
 #projects .project-info h2{
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 500;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 #projects .project-info p{
     color: white;
@@ -852,7 +853,6 @@ p {
 .video-container{
     padding-bottom: 50px;
 }
-
 .video-responsive{
     padding: 5px;
     width: 100%;
@@ -914,9 +914,8 @@ p {
 #single_project .single_project-body ol{
     text-align: justify;
     font-size: 1.5rem;
-    letter-spacing: .05rem;
     font-weight: 300;
-    padding-left: 20px;
+    padding-left: 40px;
     letter-spacing: normal;
 }
 
@@ -1111,6 +1110,14 @@ p {
         /*Start the description at the top of the container*/
         justify-content: flex-start;
     }
+    #projects .project-info h1{
+        font-size: 3.5rem;
+    }
+    #projects .project-info h2{
+        font-size: 2.5rem;
+    }
+
+
     #projects .all-projects .project-img{
         height: 100%;
     }
@@ -1159,27 +1166,28 @@ p {
     /*Single_Project section*/
 
     #single_project .single_project{
-        flex-direction: column;
-        max-width: 1200px;
         margin: 0 auto;
         padding: 100px 0;
-        padding-top: 80px;
+        padding-top: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     #single_project .single_project-header h1{
-        text-align: center;
-        font-weight: 500;
         font-size: 4rem;
-        margin-bottom: 20px;
-        letter-spacing: normal;
     }
 
     #single_project .single_project-header h2{
-        text-align: justify;
-        font-size: 2rem;
-        font-weight: 500;
-        margin: 20px;
-        letter-spacing: normal;
+        text-align: left;
+        font-size: 3rem;
+    }
+
+    #single_project .single_project-body p{
+        font-size: 1.8rem;
+    }
+
+    #single_project .single_project-body ol{
+        font-size: 1.8rem;
     }
 
     /*Style of Notebook button*/
