@@ -13085,6 +13085,7 @@ div#notebook {
 </ul>
 <p><a id='intro'></a></p>
 <h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h3><p>In this project I performed an A/B test to understand whether the implementation of the new web page for an e-commerce website generates a significant increase in the conversion rate of users compared to the old page.</p>
+<p>The dataset contains users who were divided in two groups, group and treatment. The users in the control group were given the old page of the website; the users in the treatment group were given the new page.</p>
 <p><a id='probability'></a></p>
 <h4 id="Part-I---Probability">Part I - Probability<a class="anchor-link" href="#Part-I---Probability">&#182;</a></h4><p>Let's import the libraries.</p>
 
@@ -13384,7 +13385,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Check if there are rows in which the group (control/treatment) is not aligned with the landing page (old/new).</p>
+<p>Check if there are rows in which the group (control/treatment) is not aligned with the landing page (old/new). Users in the control group were given the old page, users in the treatment group were given the new page.</p>
 
 </div>
 </div>
@@ -14151,7 +14152,7 @@ Name: landing_page, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Method-2:-Z-test">Method 2: Z-test<a class="anchor-link" href="#Method-2:-Z-test">&#182;</a></h5><p>We can obtain a similar result using a two-proportion Z-test.</p>
+<h5 id="Method-2:-Z-test">Method 2: Z-test<a class="anchor-link" href="#Method-2:-Z-test">&#182;</a></h5><p>We can obtain a similar result using a two-proportion Z-test, a statistical test used to compare two population proportions to see if they are equal, when the sample size is large.</p>
 
 </div>
 </div>
@@ -14899,10 +14900,23 @@ P-value:  0.9050583127590245
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h3><p>To conclude, based on the data collected we cannot reject the null hypothesis that the new and the old page have the same conversion rate.Therefore, neither statistically or practically would be convenient investing money in the development of the new web page.</p>
-<h3 id="Limitations">Limitations<a class="anchor-link" href="#Limitations">&#182;</a></h3><p>The main limitations of this analysis are related to the fact that there might be some variables not included in the model that could have an impact on conversion rates. For example, the fact that an user was an existing user or a new user should taken into consideration: existing users may give an unfair advantage to the old version simply because they are unhappy with the change (change aversion), or, on the contrary, may give an unfair advantage to the new version because they are drawn to the change (novely effect).</p>
+<h3 id="Limitations">Limitations<a class="anchor-link" href="#Limitations">&#182;</a></h3><p>The main limitations of this analysis are related to the fact that there might be some variables not included in the model that could have an impact on conversion rates. For example, the fact that an user was an existing user or a new user should taken into consideration: existing users may give an unfair advantage to the old version simply because they are unhappy with the change (change aversion), or, on the contrary, may give an unfair advantage to the new version because they are drawn to the change (novelty effect).</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
