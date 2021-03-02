@@ -908,13 +908,21 @@ p {
 
 #single_project .single_project-body p{
     text-align: justify;
-    font-size: 1.5rem;
+    font-size: 1.55rem;
     letter-spacing: normal;
 }
 
 #single_project .single_project-body ol{
     text-align: justify;
-    font-size: 1.5rem;
+    font-size: 1.55rem;
+    font-weight: 300;
+    padding-left: 40px;
+    letter-spacing: normal;
+}
+
+#single_project .single_project-body ul{
+    text-align: justify;
+    font-size: 1.55rem;
     font-weight: 300;
     padding-left: 40px;
     letter-spacing: normal;
@@ -1189,6 +1197,10 @@ p {
     }
 
     #single_project .single_project-body ol{
+        font-size: 1.8rem;
+    }
+
+    #single_project .single_project-body ul{
         font-size: 1.8rem;
     }
 
