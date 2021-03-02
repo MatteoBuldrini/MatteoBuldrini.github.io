@@ -592,8 +592,9 @@ p {
 }
 
 #projects .project-img{
-	flex-basis: 50%;
-	height: 300px;
+    flex-basis: 50%;
+    height: auto;
+    width: auto;
 	overflow: hidden;
     position: relative;
     border: 0.1px solid lightslategrey;
@@ -1098,11 +1099,11 @@ p {
         flex-direction: row-reverse;
     }
     #projects .project-item{
-        height: 300px;
+        height: 270px;
         margin: 0;
         width: 97%;
         border-radius: 0;
-        padding-bottom: 30px;
+        margin-bottom: 30px;
     }
     #projects .all-projects .project-info{
         padding-top: 25px;
@@ -1136,6 +1137,7 @@ p {
     /*Space between certifications*/
     #certifications .certification-item{
         margin: 20px;
+        max-width: 360px; /*Avoid too large boxes when only a single certificate is entered in a row*/
     }
 
     #certifications .certification-info{
