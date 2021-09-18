@@ -1,104 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Matteo Buldrini - Projects</title>
-    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
-<body>
-    
-    <!--Header-->
-    <section id="header">
-        <div class="header container">
-            <div class="nav-bar">
-                <div class="brand">
-                    <a href="index.html#home"><h1>Matteo Buldrini</h1></a>
-                </div>
-                <div class="nav-list">
-                    <div class="hamburger">
-                        <div class="bar"></div>
-                    </div>
-                    <ul>
-                        <!--Text in data-after is the one shown in background while hovering-->
-                        <li><a href="index.html#home" data-after="Home">Home</a></li>
-                        <!-- <li><a href="index.html#about" data-after="About">About</a></li> -->
-                        <!-- <li><a href="index.html#contact" data-after="Contacts">Contacts</a></li> -->
-                        <li><a href="projects.html" data-after="Projects">Projects</a></li>
-                        <li><a href="certifications.html" data-after="Certifications">Certifications</a></li>
-                        <li><a href="website_creation.html" data-after="Website Creation">Website Creation</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Header-->
 
+<body>
+
+    <!--Nav bar-->
+    <nav id="nav-bar">
+        <div class="brand">
+            <a href="index.html#home">
+                <h1>Matteo Buldrini</h1>
+            </a>
+        </div>
+        <div class="nav-list">
+            <div class="hamburger">
+                <div class="bar"></div>
+            </div>
+            <ul>
+                <!--Text in data-after attribute is shown in background while hovering-->
+                <li><a href="index.html#home" data-after="Home">Home</a></li>
+                <li><a href="projects.html" data-after="Projects">Projects</a></li>
+                <li><a href="certifications.html" data-after="Certifications">Certifications</a></li>
+                <li><a href="website_creation.html" data-after="Website Creation">Website Creation</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--End nav bar-->
 
     <!--Projects section-->
     <section id="projects">
-        <div class="projects container">
-            <div class="projects-header">
-                <h1 class="section-title">My Project Portfolio</h1>
-                <h2>Here is a list of some of the projects I worked on. Feel free to take a look!</h2>
-            </div>
-            <div class="all-projects">
-                <!--Project 1-->
-                <div class="project-item">
-                    <div class="project-info">
-                        <a href="MyProjects/Project_1.html">
+        <div class="projects-header">
+            <h1 class="section-title">My Project Portfolio</h1>
+            <h2>Here is a list of some of the projects I worked on. Feel free to take a look!</h2>
+        </div>
+        <div class="all-projects">
+            <!--Project 1-->
+            <div class="project-item">
+                <div class="project-info">
+                    <a href="MyProjects/Project_1.html">
                         <h1>Project 1</h1>
                         <h2>Loan Applications</h2>
-                        <p>Extract insights from Loan Applications data using Python for data wrangling and data visualization.</p>
-                        </a>
-                    </div>
-                    <div class="project-img">
-                        <a href="MyProjects/Project_1.html"><img src="images/projects_analytics.jpg" alt="img"></a>
-                    </div>
+                        <p>Extract insights from Loan Applications data using Python for data wrangling and data
+                            visualization.</p>
+                    </a>
                 </div>
-                <!--Project 2-->
-                <div class="project-item">
-                    <div class="project-info">
-                        <a href="MyProjects/Project_2.html">
+                <div class="project-img">
+                    <a href="MyProjects/Project_1.html"><img src="images/projects_analytics.jpg" alt="img"></a>
+                </div>
+            </div>
+            <!--Project 2-->
+            <div class="project-item">
+                <div class="project-info">
+                    <a href="MyProjects/Project_2.html">
                         <h1>Project 2</h1>
                         <h2>A/B Testing</h2>
-                        <p>Performed an A/B Test to compare two versions of a webpage and determine which one performs better in terms of conversion rate of users.</p>
-                        </a>
-                    </div>
-                    <div class="project-img">
-                        <a href="MyProjects/Project_2.html"><img src="images/ab_testing.png" alt="img"></a>
-                    </div>
+                        <p>Performed an A/B Test to compare two versions of a webpage and determine which one
+                            performs better in terms of conversion rate of users.</p>
+                    </a>
+                </div>
+                <div class="project-img">
+                    <a href="MyProjects/Project_2.html"><img src="images/ab_testing.png" alt="img"></a>
                 </div>
             </div>
         </div>
     </section>
     <!--End projects section-->
 
-
     <!--Footer section-->
-    <section id="footer">
-        <div class="footer container">
-            <div class="brand"><h1>Matteo Buldrini</h1></div>
-            <h2>Data | Analytics | Finance</h2>
-            <!--Icons for Linkedin/Github, don't know if include-->
-            <div class="social-icon">
-                <div class="social-item">
-                    <a href="https://www.linkedin.com/in/matteobuldrini/" target="_blank"><img src="images/linkedin_logo.png" alt="img"></a>
-                </div>
-                <!--
+    <footer id="footer">
+        <div class="brand">
+            <h1>Matteo Buldrini</h1>
+        </div>
+        <h2>Data | Analytics | Coding</h2>
+        <!--Icons for Linkedin/Github-->
+        <div class="social-icon">
+            <div class="social-item">
+                <a href="https://www.linkedin.com/in/matteobuldrini/" target="_blank"><img
+                        src="images/linkedin_logo.png" alt="img"></a>
+            </div>
+            <!--
                 <div class="social-item">
                     <a href="https://github.com/MatteoBuldrini" target="_blank"><img src="images/github_logo.png" alt="img"></a>
                 </div>
                 -->
-            </div>
-            <p>Created by Matteo Buldrini | © 2020 All rights reserved</p>
         </div>
-    </section>
+        <p>&#169; 2021 Created by Matteo Buldrini</p>
+    </footer>
     <!--End footer section-->
 
     <!--Link to JavaScript file-->
     <script src="app.js"></script>
 
 </body>
+
 </html>

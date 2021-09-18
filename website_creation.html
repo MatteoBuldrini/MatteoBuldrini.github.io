@@ -1,105 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Matteo Buldrini - Website Creation</title>
-    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
-<body>
-    
-    <!--Header-->
-    <section id="header">
-        <div class="header container">
-            <div class="nav-bar">
-                <div class="brand">
-                    <a href="index.html#home"><h1>Matteo Buldrini</h1></a>
-                </div>
-                <div class="nav-list">
-                    <div class="hamburger">
-                        <div class="bar"></div>
-                    </div>
-                    <ul>
-                        <!--Text in data-after is the one shown in background while hovering-->
-                        <li><a href="index.html#home" data-after="Home">Home</a></li>
-                        <!-- <li><a href="index.html#about" data-after="About">About</a></li> -->
-                        <!-- <li><a href="index.html#contact" data-after="Contacts">Contacts</a></li> -->
-                        <li><a href="projects.html" data-after="Projects">Projects</a></li>
-                        <li><a href="certifications.html" data-after="Certifications">Certifications</a></li>
-                        <li><a href="website_creation.html" data-after="Website Creation">Website Creation</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Header-->
 
+<body>
+
+    <!--Nav bar-->
+    <nav id="nav-bar">
+        <div class="brand">
+            <a href="index.html#home">
+                <h1>Matteo Buldrini</h1>
+            </a>
+        </div>
+        <div class="nav-list">
+            <div class="hamburger">
+                <div class="bar"></div>
+            </div>
+            <ul>
+                <!--Text in data-after attribute is shown in background while hovering-->
+                <li><a href="index.html#home" data-after="Home">Home</a></li>
+                <li><a href="projects.html" data-after="Projects">Projects</a></li>
+                <li><a href="certifications.html" data-after="Certifications">Certifications</a></li>
+                <li><a href="website_creation.html" data-after="Website Creation">Website Creation</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--End nav bar-->
 
     <!--Website creation section-->
     <section id="website_creation">
-        <div class="website_creation-container">
-            <div class="website_creation-header">
-                <h1 class="section-title">Website Creation</h1>
-                <h2>Learning how to create a website is a lot of fun. In case you are interested in doing the same, here is a selection of free resources on HTML and CSS that helped me in developing this website.</h2>
+        <div class="website_creation-header">
+            <h1 class="section-title">Website Creation</h1>
+            <h2>Learning how to create a website is a lot of fun. In case you are interested in doing the same, here is
+                a selection of free resources on HTML and CSS that helped me in developing this website.</h2>
+        </div>
+        <h3>Resources to learn HTML</h3>
+        <div class="videos">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
-            <p>Resources to learn HTML</p>
-            <div class="video-container">
-                <div class="video-responsive">
-                    <div class="aspect-ratio-16-9">
-                        <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-responsive">
-                    <div class="aspect-ratio-16-9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UB1O30fR-EE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UB1O30fR-EE" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
-            <p>Resources to learn CSS</p>
-            <div class="video-container">
-                <div class="video-responsive">
-                    <div class="aspect-ratio-16-9">
-                        <iframe src="https://www.youtube.com/embed/1Rs2ND1ryYc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-responsive">
-                    <div class="aspect-ratio-16-9">
-                        <iframe src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
+        </div>
+        <h3>Resources to learn CSS</h3>
+        <div class="videos">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/1Rs2ND1ryYc" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-
-
     <!--End website creation section-->
 
-
     <!--Footer section-->
-    <section id="footer">
-        <div class="footer container">
-            <div class="brand"><h1>Matteo Buldrini</h1></div>
-            <h2>Data | Analytics | Finance</h2>
-            <!--Icons for Linkedin/Github, don't know if include-->
-            <div class="social-icon">
-                <div class="social-item">
-                    <a href="https://www.linkedin.com/in/matteobuldrini/" target="_blank"><img src="images/linkedin_logo.png" alt="img"></a>
-                </div>
-                <!--
+    <footer id="footer">
+        <div class="brand">
+            <h1>Matteo Buldrini</h1>
+        </div>
+        <h2>Data | Analytics | Coding</h2>
+        <!--Icons for Linkedin/Github-->
+        <div class="social-icon">
+            <div class="social-item">
+                <a href="https://www.linkedin.com/in/matteobuldrini/" target="_blank"><img
+                        src="images/linkedin_logo.png" alt="img"></a>
+            </div>
+            <!--
                 <div class="social-item">
                     <a href="https://github.com/MatteoBuldrini" target="_blank"><img src="images/github_logo.png" alt="img"></a>
                 </div>
                 -->
-            </div>
-            <p>Created by Matteo Buldrini | © 2020 All rights reserved</p>
         </div>
-    </section>
+        <p>&#169; 2021 Created by Matteo Buldrini</p>
+    </footer>
     <!--End footer section-->
 
     <!--Link to JavaScript file-->
     <script src="app.js"></script>
 
 </body>
+
 </html>

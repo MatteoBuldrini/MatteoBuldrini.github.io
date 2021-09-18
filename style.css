@@ -1,22 +1,68 @@
-/*General*/
-*{
+/*START RESET STYLESHEET, to reduce inconsistencies across browsers*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*END RESET STYLESHEET*/
+
+/*---------------------------------------------------------------------------*/
+
+/*START GENERAL STYLES*/
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
-.container{
+/*TODO - all the containers should have these properties*/
+
+.container {
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -24,170 +70,206 @@ a{
     justify-content: center;
 }
 
-img{
+img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
 p {
-	color: black;
-	font-size: 1.4rem;
-	margin-top: 5px;
-	line-height: 2.5rem;
-	font-weight: 300;
-	letter-spacing: .05rem;
+    color: black;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+    line-height: 2.5rem;
 }
 
 .section-title {
-	font-size: 4rem;
-	font-weight: 300;
-	color: black;
-	margin-bottom: 10px;
-	text-transform: uppercase;
-	letter-spacing: .2rem;
-	text-align: center;
+    font-size: 3.5rem;
+    font-weight: 450;
+    color: black;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-align: center;
 }
+
 .section-title span {
-	color: crimson;
+    color: crimson;
 }
 
 /*Portfolio and Resume button style*/
-.cta{
+
+.cta {
     display: inline-block;
     padding: 10px 35px;
     color: white;
     background-color: transparent;
     border: 2px solid crimson;
-    font-size: 2rem;
+    font-size: clamp(1.55rem, 4.0vw, 1.75rem);
     text-transform: uppercase;
+    text-align: center;
     letter-spacing: .1rem;
     margin-top: 30px;
     transition: .3s ease;
     transition-property: background-color, color;
 }
-.cta:hover{
+
+.cta:hover {
     color: white;
     background-color: crimson;
 }
 
-/*Style of the name at the top and bottom*/
-.brand h1{
-    font-size: 3rem;
-    text-transform: uppercase;
-    color: white;
-}
-.brand h1 span{
-    color: crimson;
-}
-
-/*End General*/
+/*END GENERAL STYLES*/
 
 /*-----------------------------------------------------------------------------------*/
 
-/*Header Section*/
-#header{
+/*START NAV-BAR SECTION*/
+
+#nav-bar {
+    /*Stays on top even when scrolling*/
     position: fixed;
+    /*To ensure it is not covered by other elements*/
     z-index: 1000;
+    /*Set the nav bar in the top left corner*/
     left: 0;
     top: 0;
+    /*Set width of the nav bar: 100% should avoid issues with small screens*/
+    /*width: 100vw;*/
     width: 100vw;
+    /*Automatically adjust the height to allow the content to be displayed correctly*/
     height: auto;
-}
-
-#header .header{
-    min-height: 8vh;
-    /*Background color of header*/
+    /*Minimum height as % of the viewport height*/
+    min-height: 7.5vh;
+    /*Background color of nav bar*/
     background-color: #0d1013;
-    transition: .3s ease background-color;
-}
-
-#header .nav-bar{
+    /*Transition of the change in the background color*/
+    transition: background-color 0.3s ease;
+    /*Flexbox container*/
     display: flex;
+    flex-direction: row;
+    /*Center items along the cross-axis*/
     align-items: center;
+    /*Space between along the main axis*/
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    max-width: 1300px;
-    padding: 0 10px;
+    /*Add padding to the borders of the container*/
+    padding: 2px 0px 2px 10px;
 }
 
-/*Style of the navigation list - hamburger*/
-#header .nav-list ul{
+/*Name in the nav bar*/
+
+#nav-bar .brand h1 {
+    /*Set a minimum, a preferred value and a maximum value*/
+    font-size: clamp(2.3rem, 7vw, 2.8rem);
+    text-transform: uppercase;
+    color: white;
+    font-weight: 550;
+}
+
+/*Style of the navigation screen that appears when clicking on the hamburger*/
+
+#nav-bar .nav-list ul {
+    /*No bullet points in the list*/
     list-style: none;
+    /*Element removed from the normal document flow*/
     position: absolute;
-    background-color: rgb(31, 30, 30);
+    /*Background color of the hamburger when clicked*/
+    background-color: #0d1013;
+    /*When clicked, covers whole screen*/
     width: 100vw;
     height: 100vh;
+    /*Hide it on the right, unless it is clicked*/
     left: 100%;
+    /*Located at the top of the page*/
     top: 0;
+    /*Flexbox with column direction*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /*When clicked the elements will cover everything except the hamburger*/
     z-index: 1;
+    /*Hide content on the left and the right if overflowing*/
     overflow-x: hidden;
-    transition: .5s ease left;
+    /*Movement of the nav bar appearing*/
+    transition: left 0.5s ease;
 }
-/*Effects when clicking, shows/hides menu*/
-#header .nav-list ul.active{
+
+/*Show nav bar when clicking*/
+
+#nav-bar .nav-list ul.active {
     left: 0;
 }
 
 /*Style of the items in the nav list*/
-#header .nav-list ul a{
+
+#nav-bar .nav-list ul a {
     font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-    padding: 20px;
+    /*They are inline elements, changing the display to block to apply padding vertically*/
     display: block;
+    /*Add vertical space between items*/
+    padding: 25px 0;
 }
 
-/*To create the effect of the text behind*/
-#header .nav-list ul a::after{
+/*To add the text behind when hovering*/
+
+#nav-bar .nav-list ul a::after {
     content: attr(data-after);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    color: rgba(240,248,255,0.021);
-    font-size: 13rem;
+    color: rgba(240, 248, 255, 0.045);
+    font-size: 10rem;
     letter-spacing: 50px;
     z-index: -1;
-    transition: .3s ease letter-spacing;
+    transition: letter-spacing 0.3s ease;
 }
-/* Create the effect while hover*/
-#header .nav-list ul li:hover a::after{
+
+#nav-bar .nav-list ul li:hover a::after {
     transform: translate(-50%, -50%) scale(1);
     letter-spacing: initial;
 }
 
 /*Color to crimson while hover*/
-#header .nav-list ul li:hover a{
+
+#nav-bar .nav-list ul li a {
+    transition: color 0.3s ease;
+}
+
+#nav-bar .nav-list ul li:hover a {
     color: crimson;
 }
 
-#header .hamburger{
-    height: 60px;
-    width: 60px;
+/*Style of the hamburger menu*/
+
+#nav-bar .hamburger {
+    /*The size of the circle changes depeding on screen width*/
+    height: clamp(45px, 15vw, 60px);
+    width: clamp(45px, 15vw, 60px);
     display: inline-block;
     border: 3px solid white;
     border-radius: 50%;
     position: relative;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     z-index: 100;
     cursor: pointer;
-    transform: scale(.8);
-    margin-right: 20px;
+    transform: scale(0.8);
+    margin-right: 7px;
 }
 
 /*Pulse effect*/
-#header .hamburger:after{
+
+#nav-bar .hamburger:after {
     position: absolute;
     content: '';
     height: 100%;
@@ -197,55 +279,73 @@ p {
     animation: hamburger_puls 1s ease infinite;
 }
 
-#header .hamburger .bar{
-    height: 2px;
-    width: 30px;
+/*Hamburger lines*/
+
+#nav-bar .hamburger .bar {
+    /*The size of the lines changes depeding on screen width*/
+    height: clamp(1px, 1vw, 2px);
+    width: clamp(15px, 7vw, 30px);
     position: relative;
     background-color: white;
     z-index: -1;
 }
-#header .hamburger .bar::after,
-#header .hamburger .bar::before{
+
+/*Add two lines to the hamburger, below and above the central line*/
+
+#nav-bar .hamburger .bar::after, #nav-bar .hamburger .bar::before {
     content: '';
     position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
     background-color: white;
-    transition: .3s ease;
-    transition-property: top, bottom;
+    transition: top 0.3s ease, bottom 0.3s ease;
 }
 
-/*Effects of the single/three lines while clicking on the hamburger*/
-#header .hamburger .bar::after{
+/*Movements of the three lines when clicking on the hamburger*/
+
+#nav-bar .hamburger .bar::after {
     top: 8px;
 }
-#header .hamburger .bar::before{
-    bottom: 8px;
-}
-#header .hamburger.active .bar::before{
-    bottom: 0;
-}
-#header .hamburger.active .bar::after{
+
+#nav-bar .hamburger.active .bar::after {
     top: 0;
 }
 
-/*End Header Section*/
+#nav-bar .hamburger .bar::before {
+    bottom: 8px;
+}
+
+#nav-bar .hamburger.active .bar::before {
+    bottom: 0;
+}
+
+/*END NAV-BAR SECTION*/
 
 /*-----------------------------------------------------------------------------------*/
 
-/*Home Section*/
-#home{
+/*START HOME SECTION*/
+
+#home {
     /*Background image*/
-    background-image:url("images/home_data analytics3.jpg");
+    background-image: url("images/home_data analytics3.jpg");
     background-size: cover;
     background-position: top center;
     position: relative;
     z-index: 1;
+    min-height: 100vh;
+    width: 100%;
+    /*max-width: 1600px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    padding-left: 15px;
 }
 
 /*The overall effect on the background that now is black*/
-#home::after{
+
+#home::after {
     content: "";
     position: absolute;
     left: 0;
@@ -253,41 +353,46 @@ p {
     height: 100%;
     width: 100%;
     /*Change background color*/
-    background-color: #0d1013;
-    opacity: .7;
+    background-color: #0d1013e3;
+    opacity: 0.7;
     z-index: -1;
 }
 
-#home .home{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 50px;
-    justify-content: flex-start;
+/*Style of header in the home section*/
+
+#home .home-headers {
+    padding-top: 10px;
 }
 
-/*Style in the home section (Welcome...)*/
-#home h1{
+#home h1 {
     display: block;
     width: fit-content;
-    font-size: 4.0rem;
+    font-size: clamp(3.5rem, 10vw, 4.0rem);
     position: relative;
     color: transparent;
     animation: text_reveal .5s ease forwards;
     animation-delay: 1s;
+    padding: 5px 0;
+    font-weight: 550;
 }
+
 /*Delay appearance of each line*/
-#home h1:nth-child(1){
+
+#home h1:nth-child(1) {
     animation-delay: 1s;
 }
-#home h1:nth-child(2){
+
+#home h1:nth-child(2) {
     animation-delay: 2.5s;
 }
-#home h1:nth-child(3){
+
+#home h1:nth-child(3) {
     animation-delay: 3.5s;
 }
 
 /*Animation of the top text (Welcome...)*/
-#home h1 span{
+
+#home h1 span {
     position: absolute;
     top: 0;
     left: 0;
@@ -297,69 +402,90 @@ p {
     animation: text_reveal_box 1s ease;
     animation-delay: .3s;
 }
+
 /*Delay animation of each line*/
-#home h1:nth-child(1) span{
+
+#home h1:nth-child(1) span {
     animation-delay: .5s;
 }
-#home h1:nth-child(2) span{
+
+#home h1:nth-child(2) span {
     animation-delay: 2s;
 }
-#home h1:nth-child(3) span{
+
+#home h1:nth-child(3) span {
     animation-delay: 3.0s;
 }
 
-/*LinkedIn button style*/
-#home .cta2{
-    display: inline-block;
-    padding: 10px 40px;
-    color: white;
-    background-color: transparent;
-    border: 2px solid blue;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    margin-top: 30px;
-    margin-left: 5px;
-    transition: .3s ease;
-    transition-property: background-color, color;
+/*Home buttons style*/
+
+#home .home-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    margin-top: 20px;
 }
-#home .cta2:hover{
-    color: white;
+
+#home .home-buttons .cta {
+    font-size: clamp(1.5rem, 4.5vw, 1.9rem);
+    min-width: 160px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+
+#home .home-buttons .cta:hover {
+    box-shadow: 0 0.8rem 0.8rem -0.4rem;
+    transform: translateY(-0.25rem);
+}
+
+#home .home-buttons .cta:nth-of-type(2) {
+    border-color: blue;
+}
+
+#home .home-buttons .cta:nth-of-type(2):hover {
     background-color: blue;
 }
-/*End home section*/
+
+/*END HOME SECTION*/
 
 /*-----------------------------------------------------------------------------------*/
 
-/*About section*/
-#about .about{
-    flex-direction: column-reverse;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 20px;
-}
+/*START ABOUT SECTION*/
 
-/*Reduce the white space between home and about sections*/
-/*
-#about .container{
-    min-height: 10vh;
+#about {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1300px;
+    min-height: 80vh;
+    margin: 0 auto;
+    padding: 60px 40px;
 }
-*/
 
 /*Style of the image*/
-#about .col-left{
-    width: 250px;
-    height: 290px;
+
+#about .col-left {
+    width: 220px;
+    height: 260px;
 }
-#about .col-left .about-img{
+
+#about .col-left .about-img {
     height: 100%;
     width: 100%;
     position: relative;
     border: 10px solid white;
 }
+
 /*Create the red border*/
-#about .col-left .about-img::after{
+
+#about .col-left .about-img::after {
     content: '';
     position: absolute;
     left: -33px;
@@ -371,54 +497,55 @@ p {
 }
 
 /*Style of the text*/
-#about .col-right{
+
+#about .col-right {
     width: 100%;
 }
-#about .col-right h2{
+
+#about .col-right h2 {
     font-size: 1.8rem;
     font-weight: 550;
     letter-spacing: 0.1rem;
-    margin-bottom: 10px;
+    padding: 10px 0;
 }
-#about .col-right p{
+
+#about .col-right p {
     margin-bottom: 20px;
     text-align: justify;
 }
-#about .col-right .cta{
+
+/*Button currently does not exist*/
+
+#about .col-right .cta {
     color: black;
     margin-bottom: 40px;
     padding: 10px 20px;
     font-size: 2rem;
 }
-/*End about section*/
+
+/*END ABOUT SECTION*/
 
 /*-----------------------------------------------------------------------------------*/
 
-/*Contacts section*/
+/*START CONTACT SECTION*/
 
-#contact .container{
+#contact {
     min-height: 70vh;
-}
-
-
-#contact .contact{
+    width: 100%;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-#contact .section-title {
-    font-size: 3.6rem;
-    letter-spacing: normal;
-    margin-bottom: 0px;
-}
-
-#contact .contact-items{
-	width: 100%;
+#contact .contact-items {
+    width: 100%;
     max-width: 350px;
 }
 
-#contact .contact-item{
+#contact .contact-item {
     width: 80%;
     text-align: center;
     border-radius: 10px;
@@ -431,133 +558,152 @@ p {
     box-shadow: 0px 0px 18px 0 #0000005d;
     transition: .3s ease box-shadow;
 }
+
 /*Hover effect of the box*/
-#contact .contact-item:hover{
+
+#contact .contact-item:hover {
     box-shadow: 0px 0px 5px 0 #0000005d;
 }
 
 /*Icon image*/
-#contact .icon{
-    width: 50px;
+
+#contact .icon {
+    width: 45px;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-#contact .contact-info h1{
+#contact .contact-info h1 {
     font-size: 1.9rem;
     font-weight: 500;
     margin-bottom: 0px;
+    line-height: normal;
 }
-#contact .contact-info h2{
+
+#contact .contact-info h2 {
     font-size: 1.3rem;
     line-height: 2rem;
     font-weight: 500;
 }
 
-/*End contacts section*/
+/*END CONTACT SECTION*/
 
 /*-----------------------------------------------------------------------------------*/
 
-/*Footer section*/
+/*START FOOTER SECTION*/
 
-#footer{
+#footer {
     /*Grey version: linear-gradient(60deg, #29323c 0%, #32363a 100%) */
     /*Black version: linear-gradient(60deg, #0d1013 30%, #171d22 100%) */
     background-image: linear-gradient(60deg, #0d1013 30%, #171d22 100%);
-}
-
-#footer .footer{
-    min-height: 50px;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
     flex-direction: column;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8px;
+    padding-bottom: 5px;
 }
 
-#footer h1{
+#footer .brand h1 {
     color: white;
-    font-weight: 700;
-    font-size: 1.7rem;
-    letter-spacing: .2rem;
-    padding-top: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+    padding-top: 5px;
 }
 
-#footer h2{
+#footer h2 {
     color: white;
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     letter-spacing: .1rem;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
 /*Style Social icons*/
-#footer .social-icon{
+
+#footer .social-icon {
     display: flex;
-    margin-bottom: 15px;
+    flex-direction: row;
+    margin-bottom: 5px;
 }
 
-#footer .social-item{
-    height: 30px;
-    width: 30px;
+#footer .social-item {
+    height: 25px;
+    width: 25px;
     margin: 0 5px;
 }
 
 /*Effect of the icons*/
-#footer .social-item img{
+
+#footer .social-item img {
     filter: grayscale(1);
-    transition: .3s ease filter;
+    transition: filter .3s ease;
 }
-#footer .social-item:hover img{
+
+#footer .social-item:hover img {
     filter: grayscale(0);
 }
 
-#footer p{
+#footer p {
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    margin-top: 5px;
 }
 
-/*End footer section*/
+/*END FOOTER SECTION*/
 
 /*-----------------------------------------------------------------------------------*/
 
-/*Projects section*/
+/*START PROJECTS SECTION*/
 
-#projects .projects{
+#projects {
+    display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    min-height: 90vh;
     margin: 0 auto;
-    padding: 100px 0;
-    padding-top: 80px;
+    padding: 90px 5px;
 }
 
-#projects .projects-header h1{
+#projects .projects-header h1 {
+    font-size: clamp(2.5rem, 9.0vw, 3.5rem);
     text-align: center;
+    letter-spacing: normal;
     font-weight: 500;
     margin-bottom: 20px;
-    letter-spacing: normal;
+    margin-top: 10px;
 }
 
-#projects .projects-header h2{
+#projects .projects-header h2 {
     text-align: justify;
-    font-size: 2rem;
-    font-weight: 500;
-    margin: 20px;
-    letter-spacing: normal;
+    font-size: 1.8rem;
+    font-weight: 450;
+    margin: 20px 25px;
+    letter-spacing: 0.05rem;
+    line-height: 2.5rem;
 }
 
-#projects .all-projects{
+#projects .all-projects {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#projects .project-item{
+#projects .project-item {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     margin: 20px auto;
     overflow: hidden;
@@ -565,8 +711,9 @@ p {
 }
 
 /*Style of text above project images*/
-#projects .project-info{
-    padding: 25px;
+
+#projects .project-info {
+    padding: 20px;
     flex-basis: 50%;
     background-color: white;
     height: 100%;
@@ -577,134 +724,150 @@ p {
     background-image: linear-gradient(60deg, #093363 0%, #2776ca 100%);
     color: white;
 }
-#projects .project-info h1{
-    font-size: 3rem;
-    font-weight: 500;
+
+#projects .project-info h1 {
+    font-size: 2.5rem;
+    font-weight: 550;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 }
-#projects .project-info h2{
+
+#projects .project-info h1:hover {
+    color: black;
+    transition: .3s ease-in-out;
+}
+
+#projects .project-info h2 {
     font-size: 2rem;
     font-weight: 500;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0px;
 }
-#projects .project-info p{
+
+#projects .project-info p {
     color: white;
     text-align: justify;
 }
 
-#projects .project-img{
+#projects .project-img {
     flex-basis: 50%;
     height: auto;
     width: auto;
-	overflow: hidden;
+    overflow: hidden;
     position: relative;
     border: 0.1px solid lightslategrey;
-    
+    /*Apply border radius to the bottom ones*/
+    border-radius: 0px 0px 10px 10px;
 }
 
 /*In case I want to color the images of projects*/
-#projects .project-img:after{
+
+#projects .project-img:after {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
-    /*
-    background-image: linear-gradient(60deg, #093363 0%, #2776ca 100%);*/
     opacity: .7;
     /*Put it behind so the link works*/
     z-index: -1;
 }
 
 /*Create the effects of zoom when hovering the image*/
-#projects .project-img img{
+
+#projects .project-img img {
     transition: .3s ease transform;
 }
-#projects .project-item:hover .project-img img{
+
+#projects .project-item:hover .project-img img {
     transform: scale(1.1);
 }
 
-/*Effects of the button "View entire portfolio - now deleted*/
-#projects .project-others .cta{
-    color: black;
-    padding: 10px 20px;
-    font-size: 2rem;
-    font-weight: 500;
-}
-
-/*End projects section*/
+/*END PROJECTS SECTION*/
 
 /*-----------------------------------------------------------------------------------*/
 
-/*Certifications section*/
+/*START CERTIFICATIONS SECTION*/
 
-#certifications .certifications{
+#certifications {
+    display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1300px;
+    min-height: 100vh;
     margin: 0 auto;
-    padding: 100px 0;
-    padding-top: 80px;
+    padding: 90px 0px;
 }
 
-#certifications .certifications-header h1{
+#certifications .certifications-header h1 {
+    /*Descrease a bit the size and the spacing compared to the other section titles*/
+    font-size: clamp(2.5rem, 9.0vw, 3.5rem);
     text-align: center;
-    font-weight: 500;
+    letter-spacing: normal;
     margin-bottom: 20px;
-    letter-spacing: normal;
+    margin-top: 10px;
 }
 
-#certifications .certifications-header h2{
+#certifications .certifications-header h2 {
     text-align: justify;
-    font-size: 2rem;
-    font-weight: 500;
-    margin: 20px 30px;
-    letter-spacing: normal;
+    font-size: 1.8rem;
+    font-weight: 450;
+    margin: 20px 25px;
+    letter-spacing: 0.05rem;
+    line-height: 2.5rem;
 }
 
-#certifications .all-certifications{
+#certifications .all-certifications {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#certifications .certification-item{
+#certifications .certification-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    width: 80%;
-    margin: 20px auto;
+    width: 85%;
+    max-width: 500px;
+    margin: 20px 0px;
     overflow: hidden;
     border-radius: 20px;
     border: 0.1px solid lightslategrey;
 }
 
 /*Style of text above certification images*/
-#certifications .certification-info{
-    padding: 20px;
+
+#certifications .certification-info {
+    display: flex;
+    flex-direction: column;
+    /*Start the description at the top of the container*/
+    justify-content: flex-start;
+    align-items: center;
     flex-basis: 50%;
     height: 100%;
-    display: flex;
-    align-items: left;
-    justify-content: center;
-    flex-direction: column;
-    /*background-color: #5c5c5c;*/ /* Grey #59595c #5c5c5c */
+    padding: 20px 15px;
+    /*background-color: #5c5c5c;*/
+    /* Grey #59595c #5c5c5c */
     /*Grey: background-image: linear-gradient(60deg, #5c5c5c 50%, #6d6c6c 100%); */
     /*Grey (ligther): background-image: linear-gradient(60deg, #666565 0%, #707070 100%); */
     background-image: linear-gradient(60deg, #666565 0%, #707070 100%);
     color: white;
 }
 
-#certifications .certification-info h1{
-    font-size: 2.2rem;
+#certifications .certification-info h1 {
+    font-size: clamp(2.0rem, 6.0vw, 2.4rem);
     font-weight: 600;
     text-align: center;
+    line-height: normal;
 }
 
 /*Effect on certificate name when hover*/
-#certifications .certification-info h1:hover{
+
+#certifications .certification-info h1:hover {
     color: black;
     transition: .3s ease-in-out;
 }
@@ -718,24 +881,25 @@ p {
 }
 */
 
-#certifications .certification-info p{
+#certifications .certification-info p {
     margin-top: 18px;
     font-size: 1.4rem;
-    /*font-style: italic;*/
     color: white;
-    text-align: center;
+    text-align: justify;
 }
 
-#certifications .certification-img{
-	flex-basis: 50%; /*50%*/
-	height: 250px; /*250px*/
-	overflow: hidden;
+#certifications .certification-img {
+    flex-basis: 50%;
+    /*height: 250px;
+    height: 320px;*/
+    max-width: 320px;
+    overflow: hidden;
     position: relative;
 }
 
-
 /*In case I want to color the images of projects*/
-#certifications .certification-img:after{
+
+#certifications .certification-img:after {
     content: '';
     position: absolute;
     left: 0;
@@ -748,18 +912,18 @@ p {
     z-index: -1;
 }
 
-/*Zoom in effect when hovering the image*/
-
-#certifications .certification-img img{
+#certifications .certification-img img {
     transition: .3s ease transform;
 }
-#certifications .certification-item:hover .certification-img img{
+
+/*Zoom in effect when hovering the image*/
+
+#certifications .certification-item:hover .certification-img img {
     transform: scale(1.1);
 }
 
-
-
 /*Shine effect when hovering the image*/
+
 /*
 #certifications .certification-img{
     position: relative;
@@ -784,8 +948,8 @@ p {
 }
 */
 
-
 /*Blur effect when hovering the image*/
+
 /* Removed
 #certifications .certification-img{
 	-webkit-filter: blur(3px);
@@ -799,8 +963,9 @@ p {
 }
 */
 
+/*Zoom out effect while hovering the image*/
 
-/*Zoom out effect while hovering the image*/ /*
+/*
 #certifications .certification-img img{
 	-webkit-transform: scale(1.5);
 	transform: scale(1.5);
@@ -813,440 +978,566 @@ p {
 }
 */
 
-/*End certifications section*/
+/*END CERTIFICATION SECTION*/
 
 /*-----------------------------------------------------------------------------------*/
 
-/*Website creation section*/
+/*START WEBSITE_CREATION SECTION*/
 
-#website_creation{
+#website_creation {
+    display: flex;
     flex-direction: column;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 0;
-    padding-top: 80px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0px auto;
+    padding: 90px 0;
 }
 
-#website_creation .website_creation-header h1{
+#website_creation .website_creation-header h1 {
+    font-size: clamp(3.0rem, 9.0vw, 3.5rem);
     text-align: center;
     font-weight: 500;
-    margin-bottom: 0px;
     letter-spacing: normal;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-#website_creation .website_creation-header h2{
-    padding: 20px;
+#website_creation .website_creation-header h2 {
     text-align: justify;
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 30px;
-    letter-spacing: normal;
+    font-size: 1.8rem;
+    font-weight: 450;
+    margin: 20px 25px;
+    letter-spacing: 0.05rem;
+    line-height: 2.5rem;
 }
 
-#website_creation p{
-    padding-bottom: 20px;
+#website_creation h3 {
+    font-size: clamp(2.2rem, 7.0vw, 3.0rem);
     text-align: center;
-    font-size: 3rem;
-    font-weight: 600;
+    font-weight: 550;
     letter-spacing: normal;
+    padding: 25px 0px;
 }
 
-/*Space between videos and adjust size*/ 
-.video-container{
-    padding-bottom: 50px;
-}
-.video-responsive{
-    padding: 5px;
+#website_creation .videos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    display: inline-block;
-    height: 56.25%;
-    margin: 0 -1px;
+    padding-bottom: 25px;
 }
-.aspect-ratio-16-9{
-    width: 100%;
-    padding-top: 56.25%; 
+
+/*Remove padding bottom in the last group of videos*/
+
+#website_creation .videos:last-child {
+    padding-bottom: 0px;
+}
+
+/*Make YT videos responsive*/
+
+#website_creation .video-wrapper {
     position: relative;
+    overflow: hidden;
+    width: 90%;
+    max-width: 550px;
+    margin: 5px 0px;
 }
-.video-responsive iframe{
-    width: 100%;
-    height: 100%;
+
+#website_creation .video-wrapper::after {
+    display: block;
+    content: "";
+    /*YT videos aspect ration 16/9*/
+    padding-top: 56.25%;
+}
+
+#website_creation .video-wrapper iframe {
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/*End website creation section*/
-
+/*END WEBSITE_CREATION SECTION*/
 
 /*-----------------------------------------------------------------------------------*/
 
-/*Single_Project section*/
+/*START SINGLE_PROJECT SECTION*/
 
-#single_project .single_project{
+#single_project {
+    display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 90vh;
     margin: 0 auto;
-    padding: 100px 0;
-    padding-top: 80px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 80px 30px 100px 30px;
 }
 
-#single_project .single_project-header h1{
+#single_project .single_project-header h1 {
     text-align: center;
     font-weight: 500;
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: clamp(3.0rem, 8.0vw, 3.5rem);
+    margin-bottom: 10px;
+    margin-top: 10px;
     letter-spacing: normal;
 }
 
-#single_project .single_project-header h2{
+#single_project .single_project-header h2 {
     text-align: justify;
     font-size: 2rem;
     font-weight: 500;
     margin: 20px;
-    letter-spacing: normal;
+    letter-spacing: 0.05rem;
+    line-height: 2.5rem;
 }
 
-#single_project .single_project-body p{
-    text-align: justify;
+#single_project .single_project-body {
     font-size: 1.55rem;
-    letter-spacing: normal;
+    letter-spacing: 0.05rem;
+    line-height: 2.5rem;
+    text-align: justify;
 }
 
-#single_project .single_project-body ol{
-    text-align: justify;
+#single_project .single_project-body p {
     font-size: 1.55rem;
-    font-weight: 300;
-    padding-left: 40px;
-    letter-spacing: normal;
+    margin-top: 15px;
 }
 
-#single_project .single_project-body ul{
-    text-align: justify;
-    font-size: 1.55rem;
-    font-weight: 300;
-    padding-left: 40px;
-    letter-spacing: normal;
+#single_project .single_project-body ol {
+    padding-left: 20px;
+    letter-spacing: 0.05rem;
+    list-style: upper-roman;
+}
+
+#single_project .single_project-body ul {
+    padding-left: 20px;
+    letter-spacing: 0.05rem;
+    list-style: disc;
 }
 
 /*Style of Notebook button*/
-#single_project .cta{
+
+#single_project .cta {
     color: black;
     margin-bottom: 0px;
     padding: 10px 15px;
-    font-size: 2rem;
+    line-height: normal;
 }
 
-/*End single_project section*/
+#single_project .cta:hover {
+    color: white;
+}
 
+/*END SINGLE_PROJECT SECTION*/
 
 /*-----------------------------------------------------------------------------------*/
 
 /*Keyframes*/
 
 /*Shine effect of images*/
+
 @-webkit-keyframes shine {
-	100% {
-		left: 125%;
-	}
+    100% {
+        left: 125%;
+    }
 }
+
 @keyframes shine {
-	100% {
-		left: 125%;
-	}
+    100% {
+        left: 125%;
+    }
 }
 
 /*Pulse effect of hamburger*/
-@keyframes hamburger_puls{
-    0%{
+
+@keyframes hamburger_puls {
+    0% {
         opacity: 1;
         transform: scale(1);
     }
-    100%{
+    100% {
         opacity: 0;
         transform: scale(1.4);
     }
 }
 
-/*Used for animation of the text in home section (Welcome, my name is)*/
-@keyframes text_reveal_box{
-    50%{
+/*Animation of the text in the home section*/
+
+@keyframes text_reveal_box {
+    50% {
         width: 100%;
         left: 0;
     }
-    100%{
+    100% {
         width: 0;
         left: 100%;
     }
 }
+
 /*Used for animation of the text in home section (Welcome, my name is)*/
-@keyframes text_reveal{
-    100%{
+
+@keyframes text_reveal {
+    100% {
         color: white;
     }
 }
 
 /*End Keyframes*/
 
-/*-----------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
 
-/*Media Query for Tablet - Websitecreation only*/
-@media only screen and (min-width:650px){
-    
-    /*Website creation Section*/
-    /*Align two videos in a line and add responsiveness*/
-    .video-responsive{
-        padding: 5px;
-        width: 50%;
-        display: inline-block;
-        height: 56.25%;
-        margin: 0 -1px;
-    }
-    .aspect-ratio-16-9{
-        width: 100%;
-        padding-top: 56.25%; 
-        position: relative;
-    }
-    .video-responsive iframe{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-    }
-    /*End website creation Section*/
+/*START MEDIA QUERIES*/
 
+/*START MEDIA QUERY - IPADS, TABLETS*/
+
+@media only screen and (min-width:481px) {
+    /*START NAV-BAR SECTION*/
+    /*Name in the nav bar*/
+    #nav-bar .brand h1 {
+        font-size: clamp(2.8rem, 6.0vw, 3.3rem);
+        font-weight: 550;
+    }
+    /*Style of the items in the nav list*/
+    #nav-bar .nav-list ul a {
+        font-size: clamp(2.8rem, 6.0vw, 3.3rem);
+        padding: 30px 0;
+    }
+    /*Style of the hamburger menu*/
+    #nav-bar .hamburger {
+        margin-right: 20px;
+    }
+    /*END NAV-BAR SECTION*/
+    /*-----------------------------------------*/
+    /*START HOME SECTION*/
+    /*Move the text towards the center, but not entirely*/
+    #home {
+        padding-left: clamp(15px, 10vw, 100px);
+    }
+    #home h1 {
+        font-size: clamp(4.0rem, 8vw, 5.0rem);
+    }
+    #home .home-buttons .cta {
+        font-size: clamp(1.9rem, 3.5vw, 2.2rem);
+    }
+    /*END HOME SECTION*/
+    /*-----------------------------------------*/
+    /*START ABOUT SECTION*/
+    /*Increase image size*/
+    #about .col-left {
+        width: 250px;
+        height: 290px;
+    }
+    /*END ABOUT SECTION*/
+    /*-----------------------------------------*/
+    /*START CONTACT SECTION*/
+    #contact .icon {
+        width: 50px;
+    }
+    /*END CONTACT SECTION*/
+    /*-----------------------------------------*/
+    /*START CERTIFICATIONS SECTION*/
+    #certifications .certifications-header h2 {
+        /*Little font-size increase*/
+        font-size: 1.9rem;
+    }
+    /*END CERTIFICATIONS SECTION*/
+    /*-----------------------------------------*/
+    /*START WEBSITE_CREATION SECTION*/
+    #website_creation .website_creation-header h2 {
+        font-size: 1.9rem;
+    }
+    /*END WEBSITE_CREATION SECTION*/
+    /*-----------------------------------------*/
+    /*-----------------------------------------*/
+    /*START SINGLE_PROJECT SECTION*/
+    #single_project .single_project-body {
+        font-size: 1.8rem;
+    }
+    #single_project .single_project-body p {
+        font-size: 1.8rem;
+    }
+    /*Slightly increase padding left*/
+    #single_project .single_project-body ol {
+        padding-left: 40px;
+    }
+    #single_project .single_project-body ul {
+        padding-left: 40px;
+    }
+    /*START SINGLE_PROJECT SECTION*/
+    /*-----------------------------------------*/
 }
 
-/*Media Query for Tablet*/
-@media only screen and (min-width:900px){   /*768px */
+/*END MEDIA QUERY - IPADS, TABLETS*/
 
-    /*General*/
-    h1.section-title{
-        font-size: 5rem;
+/*-------------------------------------------------------------------------------------*/
+
+/*START MEDIA QUERY - SMALL SCREENS, LAPTOPS*/
+
+@media only screen and (min-width:769px) {
+    /*START GENERAL*/
+    h1.section-title {
+        font-size: 4.0rem;
     }
-    /*End General*/
-
-    /*Home Section*/
-    #home h1{
-        font-size: 5rem;
+    /*END GENERAL*/
+    /*-----------------------------------------*/
+    /*START NAV-BAR SECTION*/
+    /*Name in the nav bar*/
+    #nav-bar .brand h1 {
+        font-weight: 600;
+        margin-left: 10px;
     }
-    /*End Home Section*/
-
-    /*About Section*/
-    #about .about{
+    /*Style of the items in the nav list*/
+    #nav-bar .nav-list ul a {
+        font-size: 3.5rem;
+        padding: 35px 0;
+    }
+    /*Style of the hamburger menu*/
+    #nav-bar .hamburger {
+        margin-right: 30px;
+    }
+    /*END NAV-BAR SECTION*/
+    /*-----------------------------------------*/
+    /*START ABOUT SECTION*/
+    #about {
         flex-direction: row;
+        padding: 60px 30px;
     }
-    #about .col-left{
+    #about .col-left {
         width: 450px;
-        height: 350px;
+        height: 320px;
         padding-left: 60px;
     }
-    #about .about .col-left .about-img::after{
+    #about .col-left .about-img::after {
         left: -45px;
         top: 34px;
-        height: 98%;
-        width: 98%;
         border: 10px solid crimson;
     }
-    #about .col-right{
+    #about .col-right {
         text-align: left;
         padding: 30px;
     }
-    #about .col-right h1{
+    #about .col-right h1 {
         text-align: left;
     }
-
-    #about .col-right p{
+    #about .col-right p {
         font-weight: 500;
         font-size: 1.4rem;
     }
-
-    /*End About Section*/
-
-    /*Contacts Section*/
-    /*
-    #contact .contact{
-        flex-direction: column;
-        padding: 100px 0;
-        align-items: center;
-        justify-content: center;
-        min-height: 20vh;
+    /*END ABOUT SECTION*/
+    /*-----------------------------------------*/
+    /*START FOOTER SECTION*/
+    #footer .brand h1 {
+        font-size: 1.6rem;
+        letter-spacing: 0.2rem;
     }
-    #contact .contact-items{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin: 0;
+    #footer h2 {
+        font-size: 1.2rem;
+        letter-spacing: 0.15rem;
     }
-    #contact .contact-item{
-        width: 30%;
-        margin: 0;
+    #footer p {
+        font-size: 0.9rem;
+    }
+    /*END FOOTER SECTION*/
+    /*-----------------------------------------*/
+    /*START PROJECTS SECTION*/
+    #projects .project-item {
         flex-direction: row;
     }
-    #contact .contact-item .icon{
-        height: 100px;
-        width: 100px;
-    }
-    #contact .contact-item .icon img{
-        object-fit: contain;
-    }
-    #contact .contact-item .contact-info{
-        width: 100%;
-        text-align: left;
-        padding-left: 20px;
-    }
-    */
-    /*End Contacts Section*/
-
-
-    /*Projects Section*/
-    #projects .project-item{
-        flex-direction: row;
-    }
-    #projects .project-item:nth-child(even){
+    #projects .project-item:nth-child(even) {
         flex-direction: row-reverse;
     }
-    #projects .project-item{
+    #projects .project-item {
         height: 270px;
         margin: 0;
         width: 97%;
         border-radius: 0;
         margin-bottom: 30px;
     }
-    #projects .all-projects .project-info{
+    #projects .all-projects .project-info {
         padding-top: 25px;
         height: 100%;
         /*Start the description at the top of the container*/
         justify-content: flex-start;
     }
-    #projects .project-info h1{
+    #projects .project-info h1 {
         font-size: 3.5rem;
     }
-    #projects .project-info h2{
+    #projects .project-info h2 {
         font-size: 2.5rem;
     }
-
-
-    #projects .all-projects .project-img{
+    #projects .all-projects .project-img {
         height: 100%;
+        border-radius: 0;
     }
-    /*End Projects Section*/
-
-
-    /*Certifications Section*/
-
-    #certifications .all-certifications{
+    /*END PROJECTS SECTION*/
+    /*-----------------------------------------*/
+    /*START CERTIFICATIONS SECTION*/
+    #certifications .certifications-header h1 {
+        font-size: 4.0rem;
+    }
+    #certifications .certifications-header h2 {
+        /*Remove previous max width*/
+        max-width: inherit;
+    }
+    #certifications .all-certifications {
         /*Certificates are shown in row not in column*/
         flex-direction: row;
+        /*Allow items to go to the next line*/
+        flex-wrap: wrap;
+        /*Add space between each item*/
+        justify-content: space-evenly;
         /*Stretch vertically the height to adapt it*/
         align-items: stretch;
     }
-
-    /*Space between certifications*/
-    #certifications .certification-item{
-        margin: 20px;
-        max-width: 360px; /*Avoid too large boxes when only a single certificate is entered in a row*/
+    #certifications .certification-item {
+        /*Each item takes 45% of the width, 2 items per row*/
+        width: 45%;
     }
-
-    #certifications .certification-info{
-        /*Decrease the padding in desktop view*/
-        padding-top: 10px;
-        padding-bottom: 0px;
-        padding-left: 15px;
-        padding-right: 15px;
-        /*Start the description at the top of the container*/
-        justify-content: flex-start;
+    #certifications .certification-info p {
+        font-size: 1.5rem;
     }
-
-    /*Increase a little bit the font*/
-    #certifications .certification-info h1{
-        font-size: 2.4rem;
+    /*END CERTIFICATIONS SECTION*/
+    /*-----------------------------------------*/
+    /*START WEBSITE_CREATION SECTION*/
+    #website_creation .website_creation-header h1 {
+        font-size: 4.0rem;
     }
-
-    /*Increase a little bit the font*/
-    #certifications .certification-info p{
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    /*End Certifications Section*/
-
-    /*-----------------------------------------------------------------------------------*/
-
-    /*Single_Project section*/
-
-    #single_project .single_project{
-        margin: 0 auto;
-        padding: 100px 0;
-        padding-top: 60px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    #single_project .single_project-header h1{
+    /*END WEBSITE_CREATION SECTION*/
+    /*-----------------------------------------*/
+    /*START SINGLE_PROJECT SECTION*/
+    #single_project .single_project-header h1 {
         font-size: 4rem;
     }
-
-    #single_project .single_project-header h2{
-        text-align: left;
-        font-size: 3rem;
-    }
-
-    #single_project .single_project-body p{
-        font-size: 1.8rem;
-    }
-
-    #single_project .single_project-body ol{
-        font-size: 1.8rem;
-    }
-
-    #single_project .single_project-body ul{
-        font-size: 1.8rem;
-    }
-
-    /*Style of Notebook button*/
-    #single_project .cta{
-        color: black;
-        margin-bottom: 0px;
-        padding: 10px 15px;
-        font-size: 2rem;
-    }
-
-    /*End single_project section*/
-
+    /*END SINGLE_PROJECT SECTION*/
+    /*-----------------------------------------*/
 }
-/*End Media Query for Tablet*/
 
-/*-----------------------------------------------------------------------------------*/
+/*END MEDIA QUERY - SMALL SCREENS, LAPTOPS*/
 
-/*Media Query for Desktop*/ 
-@media only screen and (min-width:1200px){
+/*-------------------------------------------------------------------------------------*/
 
-    /*Header Section*/
-    #header .hamburger{
+/*START MEDIA QUERY - LARGE SCREENS, DESKTOPS*/
+
+@media only screen and (min-width:1025px) {
+    /*START NAV-BAR SECTION*/
+    /*Name in the nav bar*/
+    #nav-bar .brand h1 {
+        margin-left: 0;
+        margin-right: 14vw;
+        font-size: 3.0rem;
+    }
+    /*The screen size is large enough, remove hamburger and show the elements*/
+    #nav-bar {
+        justify-content: space-around;
+    }
+    #nav-bar .hamburger {
         display: none;
     }
-    #header .nav-list ul{
-        position: initial;
-        display: block;
+    #nav-bar .nav-list ul {
+        /*Previously absolute, as it was removed from the normal document flow*/
+        position: static;
+        /*Flex direction from column to row*/
+        flex-direction: row;
         height: auto;
         width: fit-content;
         background-color: transparent;
     }
-    #header .nav-list ul li{
+    #nav-bar .nav-list ul li {
         display: inline-block;
     }
-    /*Style of the text in desktop*/
-    #header .nav-list ul li a{
-        font-size: 1.5rem;
-        letter-spacing: 0.15rem;
+    #nav-bar .nav-list ul li a {
+        font-size: clamp(1.45rem, 1.4vw, 1.6rem);
+        letter-spacing: 0.1rem;
+        /*Padding between items horizontally and vertically otherwise it breaks*/
         padding: 10px 15px;
     }
-    #header .nav-list ul a:after{
+    #nav-bar .nav-list ul a:after {
         display: none;
     }
-    /*End Header Section*/
-
+    /*END NAV-BAR SECTION*/
+    /*-----------------------------------------*/
+    /*START HOME SECTION*/
+    #home {
+        padding-left: clamp(100px, 15vw, 250px);
+    }
+    #home h1 {
+        font-size: 5.0rem;
+        font-weight: 700;
+    }
+    #home .home-buttons .cta {
+        padding: 10px 25px;
+    }
+    /*END HOME SECTION*/
+    /*-----------------------------------------*/
+    /*START ABOUT SECTION*/
+    #about {
+        padding: 60px 45px;
+    }
+    /*END ABOUT SECTION*/
+    /*-----------------------------------------*/
+    /*START CERTIFICATIONS SECTION*/
+    #certifications .certification-item {
+        /*Each item takes 30% of the width, 3 items per row*/
+        width: 30%;
+    }
+    /*END CERTIFICATIONS SECTION*/
+    /*-----------------------------------------*/
+    /*START WEBSITE_CREATION SECTION*/
+    /*Videos on row*/
+    #website_creation .videos {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    #website_creation .video-wrapper {
+        /*Each item takes 47% of the width, 2 items per row*/
+        width: 47%;
+        max-width: 650px;
+    }
+    /*END WEBSITE_CREATION SECTION*/
+    /*-----------------------------------------*/
 }
-/*End Media Query for Desktop*/
+
+/*END MEDIA QUERY - LARGE SCREENS, DESKTOPS*/
+
+/*-------------------------------------------------------------------------------------*/
+
+/*START MEDIA QUERY - EXTRA-LARGE SCREENS, TVs*/
+
+@media only screen and (min-width:1200px) {
+    /*START HOME SECTION*/
+    #home .home-buttons .cta {
+        padding: 10px 30px;
+    }
+    /*END HOME SECTION*/
+    /*-----------------------------------------*/
+    /*START ABOUT SECTION*/
+    #about .col-left {
+        width: 450px;
+        height: 350px;
+    }
+    /*END ABOUT SECTION*/
+    /*-----------------------------------------*/
+    /*START FOOTER SECTION*/
+    #footer .brand h1 {
+        font-size: 1.8rem;
+    }
+    #footer h2 {
+        font-size: 1.25rem;
+        letter-spacing: 0.15rem;
+    }
+    #footer p {
+        font-size: 1.0rem;
+    }
+    /*END FOOTER SECTION*/
+    /*-----------------------------------------*/
+}
+
+/*END MEDIA QUERY - LARGE SCREENS, DESKTOPS*/
