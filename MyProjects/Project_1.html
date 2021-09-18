@@ -1,86 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <title>Matteo Buldrini - Projects</title>
-    <link rel="icon" type="image/png" href="../images/favicon.png"/>
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
-<body>
-    
-    <!--Header-->
-    <section id="header">
-        <div class="header container">
-            <div class="nav-bar">
-                <div class="brand">
-                    <a href="../index.html#home"><h1>Matteo Buldrini</h1></a>
-                </div>
-                <div class="nav-list">
-                    <div class="hamburger">
-                        <div class="bar"></div>
-                    </div>
-                    <ul>
-                        <!--Text in data-after is the one shown in background while hovering-->
-                        <li><a href="../index.html#home" data-after="Home">Home</a></li>
-                        <!-- <li><a href="index.html#about" data-after="About">About</a></li> -->
-                        <!-- <li><a href="index.html#contact" data-after="Contacts">Contacts</a></li> -->
-                        <li><a href="../projects.html" data-after="Projects">Projects</a></li>
-                        <li><a href="../certifications.html" data-after="Certifications">Certifications</a></li>
-                        <li><a href="../website_creation.html" data-after="Website Creation">Website Creation</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Header-->
 
+<body>
+
+    <!--Nav bar-->
+    <nav id="nav-bar">
+        <div class="brand">
+            <a href="../index.html#home">
+                <h1>Matteo Buldrini</h1>
+            </a>
+        </div>
+        <div class="nav-list">
+            <div class="hamburger">
+                <div class="bar"></div>
+            </div>
+            <ul>
+                <!--Text in data-after attribute is shown in background while hovering-->
+                <li><a href="../index.html#home" data-after="Home">Home</a></li>
+                <li><a href="../projects.html" data-after="Projects">Projects</a></li>
+                <li><a href="../certifications.html" data-after="Certifications">Certifications</a></li>
+                <li><a href="../website_creation.html" data-after="Website Creation">Website Creation</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--End nav bar-->
 
     <!--Project-->
     <section id="single_project">
-        <div class="single_project container">
-            <div class="single_project-header">
-                <h1 class="section-title">Loan Applications</h1>
-                <h2></h2>
-            </div>
-            <div class="single_project-body">
-                <p>The dataset I investigated contains information about loan applications: the goal of the analysis was to determine which borrowers' characteristics are mostly associated with delays in paying back the amount lent.</p>
-                <p>Steps of the analysis:</p>
-                <ul>
-                    <li>Data Wrangling</li>
-                    <li>Univariate Exploration</li>
-                    <li>Bivariate Exploration</li>
-                </ul>
-            </div>
-            <a href="Notebooks/Loan Applications.html" class="cta" target="_blank">View Full Notebook</a>
+        <div class="single_project-header">
+            <h1 class="section-title">Loan Applications</h1>
+            <h2></h2>
         </div>
+        <div class="single_project-body">
+            <p>The dataset I investigated contains information about loan applications: the goal of the analysis was
+                to determine which borrowers' characteristics are mostly associated with delays in paying back the
+                amount lent.</p>
+            <p>Steps of the analysis:
+            <ul>
+                <li>Data Wrangling</li>
+                <li>Univariate Exploration</li>
+                <li>Bivariate Exploration</li>
+            </ul>
+            </p>
+        </div>
+        <a href="Notebooks/Loan Applications.html" class="cta" target="_blank">View Full Notebook</a>
     </section>
     <!--End projects section-->
 
-
     <!--Footer section-->
-    <section id="footer">
-        <div class="footer container">
-            <div class="brand"><h1>Matteo Buldrini</h1></div>
-            <h2>Data | Analytics | Finance</h2>
-            <!--Icons for Linkedin/Github, don't know if include-->
-            <div class="social-icon">
-                <div class="social-item">
-                    <a href="https://www.linkedin.com/in/matteobuldrini/" target="_blank"><img src="../images/linkedin_logo.png" alt="img"></a>
-                </div>
-                <!--
+    <footer id="footer">
+        <div class="brand">
+            <h1>Matteo Buldrini</h1>
+        </div>
+        <h2>Data | Analytics | Coding</h2>
+        <!--Icons for Linkedin/Github-->
+        <div class="social-icon">
+            <div class="social-item">
+                <a href="https://www.linkedin.com/in/matteobuldrini/" target="_blank"><img
+                        src="../images/linkedin_logo.png" alt="img"></a>
+            </div>
+            <!--
                 <div class="social-item">
                     <a href="https://github.com/MatteoBuldrini" target="_blank"><img src="images/github_logo.png" alt="img"></a>
                 </div>
                 -->
-            </div>
-            <p>Created by Matteo Buldrini | © 2020 All rights reserved</p>
         </div>
-    </section>
+        <p>&#169; 2021 Created by Matteo Buldrini</p>
+    </footer>
     <!--End footer section-->
 
     <!--Link to JavaScript file-->
     <script src="../app.js"></script>
 
 </body>
+
 </html>
