@@ -80,7 +80,6 @@ p {
     color: black;
     font-size: 1.4rem;
     margin-top: 5px;
-    font-weight: 300;
     letter-spacing: 0.05rem;
     line-height: 2.5rem;
 }
@@ -510,6 +509,7 @@ p {
 }
 
 #about .col-right p {
+    font-size: 1.5rem;
     margin-bottom: 20px;
     text-align: justify;
 }
