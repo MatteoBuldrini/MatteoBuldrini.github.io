@@ -60,15 +60,16 @@ a {
     color: white;
 }
 
-/*TODO - all the containers should have these properties*/
+/*REMOVED - created separated containers*/
 
+/*
 .container {
     min-height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+}*/
 
 img {
     height: 100%;
@@ -1361,9 +1362,8 @@ p {
         border-radius: 0;
         margin-bottom: 30px;
     }
-    #projects .all-projects .project-info {
+    #projects .project-info {
         padding-top: 25px;
-        height: 100%;
         /*Start the description at the top of the container*/
         justify-content: flex-start;
     }
@@ -1373,7 +1373,7 @@ p {
     #projects .project-info h2 {
         font-size: 2.5rem;
     }
-    #projects .all-projects .project-img {
+    #projects .project-img {
         height: 100%;
         border-radius: 0;
     }
