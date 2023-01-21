@@ -1,6 +1,86 @@
 /*START RESET STYLESHEET, to reduce inconsistencies across browsers*/
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -11,7 +91,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /* HTML5 display-role reset for older browsers */
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
 
@@ -19,15 +109,20 @@ body {
     line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
     quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
@@ -292,7 +387,8 @@ p {
 
 /*Add two lines to the hamburger, below and above the central line*/
 
-#nav-bar .hamburger .bar::after, #nav-bar .hamburger .bar::before {
+#nav-bar .hamburger .bar::after,
+#nav-bar .hamburger .bar::before {
     content: '';
     position: absolute;
     height: 100%;
@@ -703,33 +799,33 @@ p {
     margin: 40px 60px;
     background: #232427;
     border-radius: 15px;
-  }
+}
 
-  #projects .project-container .project-card {
+#projects .project-container .project-card {
     position: relative;
     min-width: 320px;
     height: 440px;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
-      inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-      5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     margin: 30px;
     transition: 0.5s;
-  }
-  
-  #projects .project-container .project-card:nth-child(1) .project-box .project-content a {
+}
+
+#projects .project-container .project-card:nth-child(1) .project-box .project-content a {
     background: #2196f3;
-  }
-  
-  #projects .project-container .project-card:nth-child(2) .project-box .project-content a {
+}
+
+#projects .project-container .project-card:nth-child(2) .project-box .project-content a {
     background: #e91e63;
-  }
-  
-  #projects .project-container .project-card:nth-child(3) .project-box .project-content a {
+}
+
+#projects .project-container .project-card:nth-child(3) .project-box .project-content a {
     background: #23c186;
-  }
-  
-  #projects .project-container .project-card .project-box {
+}
+
+#projects .project-container .project-card .project-box {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -742,13 +838,13 @@ p {
     align-items: center;
     overflow: hidden;
     transition: 0.5s;
-  }
-  
-  #projects .project-container .project-card .project-box:hover {
-    transform: translateY(-50px);
-  }
-  
-  #projects .project-container .project-card .project-box:before {
+}
+
+#projects .project-container .project-card .project-box:hover {
+    transform: translateY(-25px);
+}
+
+#projects .project-container .project-card .project-box:before {
     content: "";
     position: absolute;
     top: 0;
@@ -756,40 +852,40 @@ p {
     width: 50%;
     height: 100%;
     background: rgba(255, 255, 255, 0.03);
-  }
-  
-  #projects .project-container .project-card .project-box .project-content {
+}
+
+#projects .project-container .project-card .project-box .project-content {
     padding: 10px;
     text-align: center;
-  }
-  
-  #projects .project-container .project-card .project-box .project-content h2 {
+}
+
+#projects .project-container .project-card .project-box .project-content h2 {
     position: absolute;
     top: 0px;
     right: 30px;
     font-size: 6rem;
     min-height: 60px;
     color: rgba(255, 255, 255, 0.1);
-  }
-  
-  #projects .project-container .project-card .project-box .project-content h3 {
+}
+
+#projects .project-container .project-card .project-box .project-content h3 {
     font-size: 3.2rem;
     color: #fff;
     z-index: 1;
     transition: 0.5s;
     margin-bottom: 15px;
-  }
-  
-  #projects .project-container .project-card .project-box .project-content p {
+}
+
+#projects .project-container .project-card .project-box .project-content p {
     font-size: 1.4rem;
     font-weight: 300;
     min-height: 120px;
     color: rgba(255, 255, 255, 0.9);
     z-index: 1;
     transition: 0.5s;
-  }
-  
-  #projects .project-container .project-card .project-box .project-content a {
+}
+
+#projects .project-container .project-card .project-box .project-content a {
     font-size: 1.6rem;
     position: relative;
     display: inline-block;
@@ -799,14 +895,23 @@ p {
     text-decoration: none;
     color: white;
     margin-top: 20px;
+    /* margin-bottom: 20px; */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
-  }
-  #projects .project-container .project-card .project-box .project-content a:hover {
+}
+
+#projects .project-container .project-card .project-box .project-content a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
     background: #fff;
     color: #000;
-  }
+}
+
+#projects .project-container .project-card .project-box .project-footer {
+    color: white;
+    position: absolute;
+    bottom: 5px;
+}
+
 /*End NEW layout */
 
 /*Start OLD layout */
@@ -900,6 +1005,7 @@ p {
 #projects .project-item:hover .project-img img {
     transform: scale(1.1);
 }
+
 /* END OLD layout */
 
 /*END PROJECTS SECTION*/
@@ -1282,6 +1388,7 @@ p {
         opacity: 1;
         transform: scale(1);
     }
+
     100% {
         opacity: 0;
         transform: scale(1.4);
@@ -1295,6 +1402,7 @@ p {
         width: 100%;
         left: 0;
     }
+
     100% {
         width: 0;
         left: 100%;
@@ -1318,21 +1426,25 @@ p {
 /*START MEDIA QUERY - IPADS, TABLETS*/
 
 @media only screen and (min-width:481px) {
+
     /*START NAV-BAR SECTION*/
     /*Name in the nav bar*/
     #nav-bar .brand h1 {
         font-size: clamp(2.8rem, 6.0vw, 3.3rem);
         font-weight: 550;
     }
+
     /*Style of the items in the nav list*/
     #nav-bar .nav-list ul a {
         font-size: clamp(2.8rem, 6.0vw, 3.3rem);
         padding: 30px 0;
     }
+
     /*Style of the hamburger menu*/
     #nav-bar .hamburger {
         margin-right: 20px;
     }
+
     /*END NAV-BAR SECTION*/
     /*-----------------------------------------*/
     /*START HOME SECTION*/
@@ -1340,12 +1452,15 @@ p {
     #home {
         padding-left: clamp(15px, 10vw, 100px);
     }
+
     #home h1 {
         font-size: clamp(4.0rem, 8vw, 5.0rem);
     }
+
     #home .home-buttons .cta {
         font-size: clamp(1.9rem, 3.5vw, 2.2rem);
     }
+
     /*END HOME SECTION*/
     /*-----------------------------------------*/
     /*START ABOUT SECTION*/
@@ -1354,12 +1469,14 @@ p {
         width: 250px;
         height: 290px;
     }
+
     /*END ABOUT SECTION*/
     /*-----------------------------------------*/
     /*START CONTACT SECTION*/
     #contact .icon {
         width: 50px;
     }
+
     /*END CONTACT SECTION*/
     /*-----------------------------------------*/
     /*START CERTIFICATIONS SECTION*/
@@ -1367,12 +1484,14 @@ p {
         /*Little font-size increase*/
         font-size: 1.9rem;
     }
+
     /*END CERTIFICATIONS SECTION*/
     /*-----------------------------------------*/
     /*START WEBSITE_CREATION SECTION*/
     #website_creation .website_creation-header h2 {
         font-size: 1.9rem;
     }
+
     /*END WEBSITE_CREATION SECTION*/
     /*-----------------------------------------*/
     /*-----------------------------------------*/
@@ -1380,16 +1499,20 @@ p {
     #single_project .single_project-body {
         font-size: 1.8rem;
     }
+
     #single_project .single_project-body p {
         font-size: 1.8rem;
     }
+
     /*Slightly increase padding left*/
     #single_project .single_project-body ol {
         padding-left: 40px;
     }
+
     #single_project .single_project-body ul {
         padding-left: 40px;
     }
+
     /*START SINGLE_PROJECT SECTION*/
     /*-----------------------------------------*/
 }
@@ -1401,10 +1524,12 @@ p {
 /*START MEDIA QUERY - SMALL SCREENS, LAPTOPS*/
 
 @media only screen and (min-width:769px) {
+
     /*START GENERAL*/
     h1.section-title {
         font-size: 4.0rem;
     }
+
     /*END GENERAL*/
     /*-----------------------------------------*/
     /*START NAV-BAR SECTION*/
@@ -1413,15 +1538,18 @@ p {
         font-weight: 600;
         margin-left: 10px;
     }
+
     /*Style of the items in the nav list*/
     #nav-bar .nav-list ul a {
         font-size: 3.5rem;
         padding: 35px 0;
     }
+
     /*Style of the hamburger menu*/
     #nav-bar .hamburger {
         margin-right: 30px;
     }
+
     /*END NAV-BAR SECTION*/
     /*-----------------------------------------*/
     /*START ABOUT SECTION*/
@@ -1429,27 +1557,33 @@ p {
         flex-direction: row;
         padding: 60px 30px;
     }
+
     #about .col-left {
         width: 450px;
         height: 320px;
         padding-left: 60px;
     }
+
     #about .col-left .about-img::after {
         left: -45px;
         top: 34px;
         border: 10px solid crimson;
     }
+
     #about .col-right {
         text-align: left;
         padding: 30px;
     }
+
     #about .col-right h1 {
         text-align: left;
     }
+
     #about .col-right p {
         font-weight: 500;
         font-size: 1.6rem;
     }
+
     /*END ABOUT SECTION*/
     /*-----------------------------------------*/
     /*START FOOTER SECTION*/
@@ -1457,22 +1591,27 @@ p {
         font-size: 1.6rem;
         letter-spacing: 0.2rem;
     }
+
     #footer h2 {
         font-size: 1.2rem;
         letter-spacing: 0.15rem;
     }
+
     #footer p {
         font-size: 0.9rem;
     }
+
     /*END FOOTER SECTION*/
     /*-----------------------------------------*/
     /*START PROJECTS SECTION*/
     #projects .project-item {
         flex-direction: row;
     }
+
     #projects .project-item:nth-child(even) {
         flex-direction: row-reverse;
     }
+
     #projects .project-item {
         height: 270px;
         margin: 0;
@@ -1480,31 +1619,38 @@ p {
         border-radius: 0;
         margin-bottom: 30px;
     }
+
     #projects .project-info {
         padding-top: 25px;
         /*Start the description at the top of the container*/
         justify-content: flex-start;
     }
+
     #projects .project-info h1 {
         font-size: 3.5rem;
     }
+
     #projects .project-info h2 {
         font-size: 2.5rem;
     }
+
     #projects .project-img {
         height: 100%;
         border-radius: 0;
     }
+
     /*END PROJECTS SECTION*/
     /*-----------------------------------------*/
     /*START CERTIFICATIONS SECTION*/
     #certifications .certifications-header h1 {
         font-size: 4.0rem;
     }
+
     #certifications .certifications-header h2 {
         /*Remove previous max width*/
         max-width: inherit;
     }
+
     #certifications .all-certifications {
         /*Certificates are shown in row not in column*/
         flex-direction: row;
@@ -1515,25 +1661,30 @@ p {
         /*Stretch vertically the height to adapt it*/
         align-items: stretch;
     }
+
     #certifications .certification-item {
         /*Each item takes 45% of the width, 2 items per row*/
         width: 45%;
     }
+
     #certifications .certification-info p {
         font-size: 1.5rem;
     }
+
     /*END CERTIFICATIONS SECTION*/
     /*-----------------------------------------*/
     /*START WEBSITE_CREATION SECTION*/
     #website_creation .website_creation-header h1 {
         font-size: 4.0rem;
     }
+
     /*END WEBSITE_CREATION SECTION*/
     /*-----------------------------------------*/
     /*START SINGLE_PROJECT SECTION*/
     #single_project .single_project-header h1 {
         font-size: 4rem;
     }
+
     /*END SINGLE_PROJECT SECTION*/
     /*-----------------------------------------*/
 }
@@ -1545,6 +1696,7 @@ p {
 /*START MEDIA QUERY - LARGE SCREENS, DESKTOPS*/
 
 @media only screen and (min-width:1025px) {
+
     /*START NAV-BAR SECTION*/
     /*Name in the nav bar*/
     #nav-bar .brand h1 {
@@ -1552,13 +1704,16 @@ p {
         margin-right: 14vw;
         font-size: 3.0rem;
     }
+
     /*The screen size is large enough, remove hamburger and show the elements*/
     #nav-bar {
         justify-content: space-around;
     }
+
     #nav-bar .hamburger {
         display: none;
     }
+
     #nav-bar .nav-list ul {
         /*Previously absolute, as it was removed from the normal document flow*/
         position: static;
@@ -1568,37 +1723,45 @@ p {
         width: fit-content;
         background-color: transparent;
     }
+
     #nav-bar .nav-list ul li {
         display: inline-block;
     }
+
     #nav-bar .nav-list ul li a {
         font-size: clamp(1.45rem, 1.4vw, 1.6rem);
         letter-spacing: 0.1rem;
         /*Padding between items horizontally and vertically otherwise it breaks*/
         padding: 10px 15px;
     }
+
     #nav-bar .nav-list ul a:after {
         display: none;
     }
+
     /*END NAV-BAR SECTION*/
     /*-----------------------------------------*/
     /*START HOME SECTION*/
     #home {
         padding-left: clamp(100px, 15vw, 250px);
     }
+
     #home h1 {
         font-size: 5.0rem;
         font-weight: 700;
     }
+
     #home .home-buttons .cta {
         padding: 10px 25px;
     }
+
     /*END HOME SECTION*/
     /*-----------------------------------------*/
     /*START ABOUT SECTION*/
     #about {
         padding: 60px 45px;
     }
+
     /*END ABOUT SECTION*/
     /*-----------------------------------------*/
     /*START CERTIFICATIONS SECTION*/
@@ -1606,6 +1769,7 @@ p {
         /*Each item takes 30% of the width, 3 items per row*/
         width: 30%;
     }
+
     /*END CERTIFICATIONS SECTION*/
     /*-----------------------------------------*/
     /*START WEBSITE_CREATION SECTION*/
@@ -1614,11 +1778,13 @@ p {
         flex-direction: row;
         justify-content: space-evenly;
     }
+
     #website_creation .video-wrapper {
         /*Each item takes 47% of the width, 2 items per row*/
         width: 47%;
         max-width: 650px;
     }
+
     /*END WEBSITE_CREATION SECTION*/
     /*-----------------------------------------*/
 }
@@ -1630,10 +1796,12 @@ p {
 /*START MEDIA QUERY - EXTRA-LARGE SCREENS, TVs*/
 
 @media only screen and (min-width:1200px) {
+
     /*START HOME SECTION*/
     #home .home-buttons .cta {
         padding: 10px 30px;
     }
+
     /*END HOME SECTION*/
     /*-----------------------------------------*/
     /*START ABOUT SECTION*/
@@ -1641,19 +1809,23 @@ p {
         width: 450px;
         height: 350px;
     }
+
     /*END ABOUT SECTION*/
     /*-----------------------------------------*/
     /*START FOOTER SECTION*/
     #footer .brand h1 {
         font-size: 1.8rem;
     }
+
     #footer h2 {
         font-size: 1.25rem;
         letter-spacing: 0.15rem;
     }
+
     #footer p {
         font-size: 1.0rem;
     }
+
     /*END FOOTER SECTION*/
     /*-----------------------------------------*/
 }
