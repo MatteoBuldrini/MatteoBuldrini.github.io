@@ -465,11 +465,14 @@ p {
     width: fit-content;
     font-size: clamp(3.5rem, 10vw, 4.0rem);
     position: relative;
-    color: transparent;
+    color: white; 
+    /* color: transparent;
     animation: text_reveal .5s ease forwards;
-    animation-delay: 1s;
+    animation-delay: 1s; */
     padding: 5px 0;
     font-weight: 550;
+    opacity: 0;
+    filter: blur(4px);
 }
 
 /*Delay appearance of each line*/
@@ -486,9 +489,9 @@ p {
     animation-delay: 3.5s;
 }
 
-/*Animation of the top text (Welcome...)*/
+/*Animation of the top text (Welcome to my website...)*/
 
-#home h1 span {
+/* #home h1 span {
     position: absolute;
     top: 0;
     left: 0;
@@ -498,8 +501,6 @@ p {
     animation: text_reveal_box 1s ease;
     animation-delay: .3s;
 }
-
-/*Delay animation of each line*/
 
 #home h1:nth-child(1) span {
     animation-delay: .5s;
@@ -511,6 +512,16 @@ p {
 
 #home h1:nth-child(3) span {
     animation-delay: 3.0s;
+} */
+
+#home .home-headers h1:nth-child(1) {
+    animation: fade-in 1s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+#home .home-headers h1:nth-child(2) {
+    animation: fade-in 1s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+#home .home-headers h1:nth-child(3) {
+    animation: fade-in 1s 2.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
 /*Home buttons style*/
@@ -1368,6 +1379,13 @@ p {
 /*Keyframes*/
 
 /*Shine effect of images*/
+
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+}
 
 @-webkit-keyframes shine {
     100% {
